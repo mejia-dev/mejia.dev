@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Portfolio.css';
-import profilePic from '../img/aaron.png';
-import nameWordArt from '../img/name.png';
 import Header from './Header';
 import ProjectsList from './ProjectsList';
 
@@ -82,6 +80,7 @@ export default function Portfolio() {
     <React.Fragment>
       <Header 
         onClickNavButton={setSelectedPage}
+        navButtons={["Home", "About", "Contact"]}
       />
       {currentView}
     </React.Fragment>

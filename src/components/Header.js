@@ -13,10 +13,10 @@ export default function Header(props) {
         <br className="wideViewOnly" />
       </div>
       {props.navButtons.map((action, index) => (
-        <div key={index}>
+        <span key={index}>
           <button type="button" className="expandSection" onClick={() => props.onClickNavButton(action)}>{action}</button>
           <br className="wideViewOnly" /><br className="wideViewOnly" />
-        </div>
+        </span>
       ))}
     </div>
   )

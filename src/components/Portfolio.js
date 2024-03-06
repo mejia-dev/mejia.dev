@@ -60,7 +60,7 @@ export default function Portfolio() {
         onClickNavButton={setSelectedPage}
         navButtons={["Home", "About", "Contact"]}
       />
-      <div className="projectSpotlight-Wrapper">{renderCurrentView()}</div>
+      <div id="mainBodyContent">{renderCurrentView()}</div>
     </React.Fragment>
   );
 }

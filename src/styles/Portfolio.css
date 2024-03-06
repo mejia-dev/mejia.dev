@@ -4,7 +4,7 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.navBar {
+#navBar {
   background-color: #1e1e1e;
   color: rgb(205, 169, 133);
   float: left;
@@ -18,14 +18,14 @@ body {
   box-shadow: 1rem 1rem black;
 }
 
-.name {
+#nameWordArt {
   width: 90%;
   height: auto;
   display: block;
   margin: auto;
 }
 
-.profilePic {
+#profilePic {
   border-radius: 50%;
   width: 80%;
   height: auto;
@@ -33,7 +33,7 @@ body {
   margin: auto;
 }
 
-.expandSection {
+.navBarButton {
   background-color: #1e1e1e;
   cursor: pointer;
   padding: 10px;
@@ -47,24 +47,11 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.active,
-.expandSection:hover {
+.navBarButton:hover {
   outline: solid;
 }
 
-.aboutMe-Section {
-  margin: 1%;
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-.aboutMe-Section p {
-  text-align: center;
-}
-
-.projectSpotlight-Wrapper {
+#mainBodyContent {
   float: left;
   background-color: #1e1e1e;
   width: 70%;
@@ -79,59 +66,73 @@ body {
 
 }
 
+#navBarHamburger {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
-  .projectSpotlight-Wrapper {
+  #mainBodyContent {
     flex-direction: column;
     width: 98%;
     float: right;
     margin: 2%;
   }
 
-  .navBar {
+  #navBar {
     display: block;
     width: 95%;
     float: left;
     margin: 2%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
   }
 
-  .aboutMe-Section {
-    max-width: 98%;
-    transition: max-height 0.2s ease-out;
-    float: right;
-    margin: auto;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
+  #navBarButtonHolder {
+    display: none;
   }
 
-  .name {
-    width: 60%;
-    height: auto;
-    margin: 1%;
-    float: left;
-    margin-left: 12%;
+  #nameWordArt {
+    width: 50vw;
   }
 
-  .profilePic {
-    border-radius: 50%;
-    width: 15%;
-    height: auto;
-    margin: 1%;
+  #profilePic {
+    margin: 3vw;
+    width: 10vw;
   }
 
-  .expandSection {
+  #navBarHamburger {
+    display: unset;
+    margin: 3vw;
+    width: 10vw;
+  }
+
+
+  /* #navBarButtonHolder {
+    display: flex;
+    justify-content: space-evenly;
+  } */
+
+  /* .navBarButton {
     width: 22%;
     margin: 1%;
     font-size: 2.5vw;
-  }
+  } */
 
-  .wideViewOnly {
-    display: none;
-  }
 }
 
+
+.apiMessage {
+  text-align: center;
+}
+
+
+a {
+  color: #CDA985;
+}
+/*  
 .projectSpotlight-Project {
-  /* outline: solid #7180AC; */
+  outline: solid #7180AC;
   color: #CDA985;
   float: left;
   width: 95%;
@@ -148,10 +149,5 @@ body {
   margin: auto;
 }
 
-a {
-  color: #7180AC;
-}
 
-.apiMessage {
-  text-align: center;
-}
+ */

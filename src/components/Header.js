@@ -6,18 +6,23 @@ import nameWordArt from '../img/name.png';
 
 export default function Header(props) {
   return (
-    <div className="navBar">
-      <img className="name" src={nameWordArt} alt="Aaron Mejia name" />
+    <div id="navBar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navBarHamburger" viewBox="0 0 16 16">
+        <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg>
+      <img id="nameWordArt" src={nameWordArt} alt="Aaron Mejia name" />
       <div>
-        <img className="profilePic" src={profilePic} alt="silhouette of Aaron sitting on beach watching sunset" />
-        <br className="wideViewOnly" />
+        <img id="profilePic" src={profilePic} alt="Silhouette of Aaron sitting on beach watching sunset" />
+        <br />
       </div>
-      {props.navButtons.map((action, index) => (
-        <span key={index}>
-          <button type="button" className="expandSection" onClick={() => props.onClickNavButton(action)}>{action}</button>
-          <br className="wideViewOnly" /><br className="wideViewOnly" />
-        </span>
-      ))}
+      <div id="navBarButtonHolder">
+        {props.navButtons.map((action, index) => (
+          <span key={index}>
+            <button type="button" className="navBarButton" onClick={() => props.onClickNavButton(action)}>{action}</button>
+            <br className="wideViewOnly" /><br className="wideViewOnly" />
+          </span>
+        ))}
+      </div>
     </div>
   )
 }

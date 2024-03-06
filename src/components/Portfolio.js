@@ -11,6 +11,7 @@ export default function Portfolio() {
   const [projectsListLoaded, setProjectsListLoaded] = useState(false);
   const [projectsList, setProjectsList] = useState([]);
   const [projectsListApiErrorMsg, setProjectsListApiErrorMsg] = useState(null);
+  const [selectedPage, setSelectedPage] = useState("Home");
 
   useEffect(() => {
     fetch("https://gh-pinned-repos-api.ysnirix.xyz/api/get?username=mejia-dev")
@@ -32,36 +33,47 @@ export default function Portfolio() {
 
 
   function showPageAbout(){
-
+    setSelectedPage("About");
   }
 
   function showPageContact(){
-
+    setSelectedPage("Contact");
   }
 
   function showPageProjects()
   {
-
+    setSelectedPage("Home");
   }
 
-  
-
-  let projectsRendering;
-  if (!projectsListLoaded) {
-    projectsRendering = (
-      <div className="projectSpotlight-Wrapper"><p className="apiMessage">Loading data from GitHub, please wait...</p></div>
+  let currentView;
+  if (selectedPage === "Contact"){
+    currentView = (
+      <>
+      </>
     )
-  } else if (projectsListApiErrorMsg != null) {
-    console.log(projectsListApiErrorMsg);
-    projectsRendering = (
-      <div className="projectSpotlight-Wrapper"><h3 className="apiMessage">Error while getting current projects list. {projectsListApiErrorMsg.message} <br />Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.</h3></div>
+  } else if (selectedPage === "About"){
+    currentView = (
+      <>
+      </>
     )
   } else {
-    projectsRendering = (
-      <ProjectsList
-        projectList={projectsList}
-      />
-    )
+      if (!projectsListLoaded) {
+        currentView = (
+          <div className="projectSpotlight-Wrapper"><p className="apiMessage">Loading data from GitHub, please wait...</p></div>
+        )
+      } else if (projectsListApiErrorMsg != null) {
+        console.log(projectsListApiErrorMsg);
+        currentView = (
+          <div className="projectSpotlight-Wrapper"><h3 className="apiMessage">Error while getting current projects list. {projectsListApiErrorMsg.message} <br />Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.</h3></div>
+        )
+      } else {
+        currentView = (
+          <ProjectsList
+            projectList={projectsList}
+          />
+        )
+      }
+      
   }
 
   return (
@@ -71,7 +83,7 @@ export default function Portfolio() {
         onClickAbout={showPageAbout}
         OnClickContact={showPageContact}
       />
-      {projectsRendering}
+      {currentView}
     </React.Fragment>
   )
 }

@@ -6,23 +6,12 @@ import nameWordArt from '../img/name.png';
 
 export default function Header(props) {
 
-
-  // function expandNavBarItem(elementId) {
-  //   document.getElementById(elementId).classList.toggle("active");
-  //   const content = document.getElementById(elementId).nextElementSibling;
-  //   if (content.style.maxHeight) {
-  //     content.style.maxHeight = null;
-  //   } else {
-  //     content.style.maxHeight = content.scrollHeight + "px";
-  //   }
-  // }
-
   return (
     <div className="navBar">
-        <img className="name" src={nameWordArt} alt="Aaron Mejia name" />
         <div>
           <img className="profilePic" src={profilePic} alt="silhouette of Aaron sitting on beach watching sunset" />
         </div>
+        <img className="name" src={nameWordArt} alt="Aaron Mejia name" />
         <br className="wideViewOnly" /><br className="wideViewOnly" />
         <button type="button" className="expandSection" id="firstNavSection" onClick={props.onClickHome}>Home</button>
         {/* <div className="aboutMe-Section">

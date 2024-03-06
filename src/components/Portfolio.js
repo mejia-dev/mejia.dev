@@ -12,7 +12,6 @@ export default function Portfolio() {
   const [projectsList, setProjectsList] = useState([]);
   const [projectsListApiErrorMsg, setProjectsListApiErrorMsg] = useState(null);
   const [selectedPage, setSelectedPage] = useState("Home");
-  // const [timeout, setTimeout] = useState(0);
 
   useEffect(() => {
     fetch("https://gh-pinned-repos-api.ysnirix.xyz/api/get?username=mejia-dev")
@@ -32,35 +31,26 @@ export default function Portfolio() {
       });
   }, [])
 
-
-    useEffect(() => {
-      let timeout;
-      let navBar = document.getElementById("navBar");
-      let floatingNavBarPlaceholder = document.getElementById("floatingNavBarPlaceholder");
-      // let navBarHeight = navBar.offsetHeight;
-
-      window.onscroll = () => {
-        if (timeout) {
-          clearTimeout(timeout)
-        }
-        
-        timeout = setTimeout(() => {
-          if (window.scrollY > navBar.offsetHeight) {
-            navBar.classList.add("sticky");
-            floatingNavBarPlaceholder.classList.add("show");
-            floatingNavBarPlaceholder.style.height = (navBar.offsetHeight) + "px";
-
-            // floatingNavBarPlaceholder.setAttribute("offsetHeight", navBarHeight * 2);
-            console.log("NavBar height: " + navBar.offsetHeight + ". Placeholder height: " + floatingNavBarPlaceholder.offsetHeight);
-
-
-          } else {
-            navBar.classList.remove("sticky");
-            floatingNavBarPlaceholder.classList.remove("show");
-          } 
-        }, 10)
+  useEffect(() => {
+    let timeout;
+    let navBar = document.getElementById("navBar");
+    let floatingNavBarPlaceholder = document.getElementById("floatingNavBarPlaceholder");
+    window.onscroll = () => {
+      floatingNavBarPlaceholder.style.height = (navBar.offsetHeight) + "px";
+      if (timeout) {
+        clearTimeout(timeout)
       }
-    }, [])
+      timeout = setTimeout(() => {
+        if (window.scrollY > navBar.offsetHeight) {
+          navBar.classList.add("sticky");
+          floatingNavBarPlaceholder.classList.add("show");
+        } else {
+          navBar.classList.remove("sticky");
+          floatingNavBarPlaceholder.classList.remove("show");
+        }
+      }, 10)
+    }
+  }, [])
 
 
   const renderCurrentView = () => {

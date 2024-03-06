@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/Portfolio.css';
 import Header from './Header';
 import ProjectsList from './ProjectsList';
+import About from './About';
 
 
 export default function Portfolio() {
@@ -44,17 +45,7 @@ export default function Portfolio() {
     )
   } else if (selectedPage === "About"){
     currentView = (
-      <>
-      {/* <div className="aboutMe-Section">
-          <p>Hello!<br />I am an up-and-coming developer in the Portland metro area. I come from a background of 5 years in IT, managing the maintenance of large networks, training of technicians, and creation/documentation of processes. Programming excites me and I <em>love</em> helping individuals further themselves and their businesses through technology. I am currently enrolled in <span ><a href="https://epicodus.com" target="_blank" rel="noreferrer">Epicodus</a></span> to help achieve this goal.<br />I'm excited to work with you!</p>
-        </div> */}
-        {/* <div className="aboutMe-Section">
-          <ul>
-            <li>I have assisted in the creation & design of at least 4 different websites for small businesses.</li>
-            <li>I have built fully-functioning web servers from scratch on Linux using LAMP stacks and WordPress</li>
-          </ul>
-        </div> */}
-      </>
+      <About />
     )
   } else {
       if (!projectsListLoaded) {
@@ -78,7 +69,6 @@ export default function Portfolio() {
           />
         )
       }
-      
   }
 
   return (
@@ -88,7 +78,6 @@ export default function Portfolio() {
         navButtons={["Home", "About", "Contact"]}
       />
       <div className="projectSpotlight-Wrapper">{currentView}</div>
-      
     </React.Fragment>
   )
 }

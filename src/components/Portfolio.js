@@ -31,46 +31,37 @@ export default function Portfolio() {
       });
   }, [])
 
-  let currentView;
-  if (selectedPage === "Contact"){
-    currentView = (
-      <Contact />
-    )
-  } else if (selectedPage === "About"){
-    currentView = (
-      <About />
-    )
-  } else {
+  const renderCurrentView = () => {
+    if (selectedPage === "Contact") {
+      return <Contact />;
+    } else if (selectedPage === "About") {
+      return <About />;
+    } else {
       if (!projectsListLoaded) {
-        currentView = (
-          <p className="apiMessage">Loading data from GitHub, please wait...</p>
-        )
+        return <p className="apiMessage">Loading data from GitHub, please wait...</p>;
       } else if (projectsListApiErrorMsg != null) {
         console.log(projectsListApiErrorMsg);
-        currentView = (
+        return (
           <>
-          <h3 className="apiMessage">
-            Error while getting current projects list. {projectsListApiErrorMsg.message}<br />
-            Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.
-          </h3>
+            <h3 className="apiMessage">
+              Error while getting current projects list. {projectsListApiErrorMsg.message}<br />
+              Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.
+            </h3>
           </>
-        )
+        );
       } else {
-        currentView = (
-          <ProjectsList
-            projectList={projectsList}
-          />
-        )
+        return <ProjectsList projectList={projectsList} />;
       }
-  }
+    }
+  };
 
   return (
     <React.Fragment>
-      <Header 
+      <Header
         onClickNavButton={setSelectedPage}
         navButtons={["Home", "About", "Contact"]}
       />
-      <div className="projectSpotlight-Wrapper">{currentView}</div>
+      <div className="projectSpotlight-Wrapper">{renderCurrentView()}</div>
     </React.Fragment>
-  )
+  );
 }

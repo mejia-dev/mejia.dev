@@ -13,7 +13,6 @@ export default function ProjectsList(props) {
 
   return (
     <React.Fragment>
-      <div className="projectSpotlight-Wrapper">
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="line">
             {line.map((project, index) => (
@@ -28,7 +27,6 @@ export default function ProjectsList(props) {
             ))}
           </div>
         ))}
-      </div>
     </React.Fragment>
   )
 }

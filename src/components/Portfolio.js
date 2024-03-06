@@ -59,12 +59,17 @@ export default function Portfolio() {
   } else {
       if (!projectsListLoaded) {
         currentView = (
-          <div className="projectSpotlight-Wrapper"><p className="apiMessage">Loading data from GitHub, please wait...</p></div>
+          <p className="apiMessage">Loading data from GitHub, please wait...</p>
         )
       } else if (projectsListApiErrorMsg != null) {
         console.log(projectsListApiErrorMsg);
         currentView = (
-          <div className="projectSpotlight-Wrapper"><h3 className="apiMessage">Error while getting current projects list. {projectsListApiErrorMsg.message} <br />Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.</h3></div>
+          <>
+          <h3 className="apiMessage">
+            Error while getting current projects list. {projectsListApiErrorMsg.message}<br />
+            Please visit <a href="https://github.com/mejia-dev" target="_blank" rel="noreferrer">github.com/mejia-dev</a> to view current projects.
+          </h3>
+          </>
         )
       } else {
         currentView = (
@@ -82,7 +87,8 @@ export default function Portfolio() {
         onClickNavButton={setSelectedPage}
         navButtons={["Home", "About", "Contact"]}
       />
-      {currentView}
+      <div className="projectSpotlight-Wrapper">{currentView}</div>
+      
     </React.Fragment>
   )
 }

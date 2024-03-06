@@ -3,6 +3,7 @@ import '../styles/Portfolio.css';
 import Header from './Header';
 import ProjectsList from './ProjectsList';
 import About from './About';
+import Contact from './Contact';
 
 
 export default function Portfolio() {
@@ -33,15 +34,7 @@ export default function Portfolio() {
   let currentView;
   if (selectedPage === "Contact"){
     currentView = (
-      <>
-      {/* <div className="aboutMe-Section">
-          <p>Let's get in touch!</p>
-          <p>Email: <a href="mailto:aaron@example.com">aaron@example.com</a>
-            <br />
-            GitHub: <a href="https://github.com/mejia-dev">github.com/mejia-dev</a>
-          </p>
-        </div> */}
-      </>
+      <Contact />
     )
   } else if (selectedPage === "About"){
     currentView = (

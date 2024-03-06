@@ -12,11 +12,11 @@ export default function Header(props) {
         <img className="profilePic" src={profilePic} alt="silhouette of Aaron sitting on beach watching sunset" />
         <br className="wideViewOnly" />
       </div>
-      {props.navButtons.map((action) => (
-        <>
+      {props.navButtons.map((action, index) => (
+        <div key={index}>
           <button type="button" className="expandSection" onClick={() => props.onClickNavButton(action)}>{action}</button>
-          <br className="wideViewOnly" />
-        </>
+          <br className="wideViewOnly" /><br className="wideViewOnly" />
+        </div>
       ))}
     </div>
   )

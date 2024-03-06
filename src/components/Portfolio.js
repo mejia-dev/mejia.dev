@@ -40,7 +40,6 @@ export default function Portfolio() {
       if (!projectsListLoaded) {
         return <p className="apiMessage">Loading data from GitHub, please wait...</p>;
       } else if (projectsListApiErrorMsg != null) {
-        console.log(projectsListApiErrorMsg);
         return (
           <>
             <h3 className="apiMessage">

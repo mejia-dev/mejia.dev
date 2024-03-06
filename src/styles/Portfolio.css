@@ -70,6 +70,10 @@ body {
   display: none;
 }
 
+#floatingNavBarPlaceholder {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   #mainBodyContent {
     flex-direction: column;
@@ -79,6 +83,8 @@ body {
   }
 
   #navBar {
+    top: -100px;
+    transition: top 0.5s ease-in-out;
     display: block;
     width: 95%;
     float: left;
@@ -86,6 +92,16 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
+    height: auto;
+  }
+
+  #navBar.sticky {
+    position: fixed;
+    top: 0;
+  }
+
+  #floatingNavBarPlaceholder.show {
+    display:inline-block;
   }
 
   #navBarButtonHolder {

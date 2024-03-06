@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-with-react",
+  "name": "mejia.dev",
   "version": "0.1.0",
-  "homepage": "https://mejia-dev.github.io/portfolio-with-react",
+  "homepage": "https://mejia.dev",
   "private": true,
   "dependencies": {
     "@octokit/rest": "^20.0.2",

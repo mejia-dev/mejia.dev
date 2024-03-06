@@ -11,10 +11,8 @@ export default function Header(props) {
         <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
       </svg>
       <img id="nameWordArt" src={nameWordArt} alt="Aaron Mejia name" />
-      <div>
-        <img id="profilePic" src={profilePic} alt="Silhouette of Aaron sitting on beach watching sunset" />
-        <br />
-      </div>
+      <img id="profilePic" src={profilePic} alt="Silhouette of Aaron sitting on beach watching sunset" />
+      <br />
       <div id="navBarButtonHolder">
         {props.navButtons.map((action, index) => (
           <span key={index}>

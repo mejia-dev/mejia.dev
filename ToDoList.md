@@ -29,3 +29,7 @@
   - ~~Sticky Header~~
   - Hamburger menu (modal through onclick prop passed from Portfolio to Header)
   - ~~Adjust small screen margins~~
+
+
+- Bugs:
+  - GitHub colored dot icons show through floating header

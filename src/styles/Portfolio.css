@@ -5,7 +5,7 @@ body {
 }
 
 #navBar {
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
   color: rgb(205, 169, 133);
   float: left;
   margin: 2%;
@@ -15,7 +15,7 @@ body {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 1rem 1rem black;
+  /* box-shadow: 1rem 1rem black; */
 }
 
 #nameWordArt {

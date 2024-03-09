@@ -123,6 +123,24 @@ body {
     width: 10vw;
   }
 
+  .navBarButtonSmall {
+    background-color: #1e1e1e;
+    cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  margin: auto;
+  border: thick;
+  border-radius: 10px;
+  text-align: center;
+  color: #CDA985;
+  font-size: 165%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .navBarButtonSmall:hover {
+    outline: solid;
+  }
+
 
   /* #navBarButtonHolder {
     display: flex;

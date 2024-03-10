@@ -53,13 +53,13 @@ body {
 
 #mainBodyContent {
   float: left;
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
   width: 70%;
   margin: 2%;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
-  box-shadow: 1rem 1rem black;
+  /* box-shadow: 1rem 1rem black; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -76,9 +76,9 @@ body {
 
 @media screen and (max-width: 1200px) {
   #mainBodyContent {
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 98%;
-    float: right;
+    /* float: right; */
     margin: 2%;
   }
 

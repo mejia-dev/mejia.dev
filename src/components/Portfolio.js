@@ -4,6 +4,7 @@ import Header from './Header';
 import ProjectsList from './ProjectsList';
 import About from './About';
 import Contact from './Contact';
+import ProjectsPresenter from './ProjectsPresenter';
 
 
 export default function Portfolio() {
@@ -71,7 +72,9 @@ export default function Portfolio() {
           </>
         );
       } else {
-        return <ProjectsList projectList={projectsList} />;
+        // return <ProjectsList projectList={projectsList} />;
+        return <ProjectsPresenter projectList={projectsList} />;
+
       }
     }
   };

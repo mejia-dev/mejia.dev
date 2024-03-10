@@ -6,7 +6,6 @@
     - make buttons glow on hover
     - ~~Drop down sections may not be useful. Change these to render different React components on the main page~~
     - ~~change pointer icon to not be question mark~~
-  - Add succinct version of About to header -- perhaps same one from GitHub?
   - Add GitHub link
   - ~~Change center alignment of navbar in portrait mode~~
 
@@ -14,6 +13,7 @@
   - ~~Change this to be an actual form. Use FormSubmit.co / connect to Google Sheets / Formspree.io~~
 
 - Skills/Interests / About page:
+  - Add succinct version of About to header -- perhaps same one from GitHub?
   - Not currently quantifiable. Either improve it or remove it.
     - Open source
     - Epicodus projects

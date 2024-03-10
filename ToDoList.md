@@ -8,10 +8,10 @@
     - ~~change pointer icon to not be question mark~~
   - Add succinct version of About to header -- perhaps same one from GitHub?
   - Add GitHub link
-  - Change center alignment of of navbar in portrait mode
+  - ~~Change center alignment of navbar in portrait mode~~
 
 - Contact Form:
-  - Change this to be an actual form. Use FormSubmit.co / connect to Google Sheets / Formspree.io
+  - ~~Change this to be an actual form. Use FormSubmit.co / connect to Google Sheets / Formspree.io~~
 
 - Skills/Interests / About page:
   - Not currently quantifiable. Either improve it or remove it.

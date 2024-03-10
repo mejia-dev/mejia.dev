@@ -8,26 +8,31 @@ export default function Contact() {
 
   function SubmitForm(event) {
     event.preventDefault();
-    setFormSubmitLoading(true);
-    const formElement = document.getElementById("contactForm");
-    const submittedData = new FormData(formElement);
-    fetch(`${process.env.REACT_APP_CONTACT_FORM_API}`,
-      {
-        method: "POST",
-        body: submittedData
-      }
-    )
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`${response.status}`);
+    if (!formSubmitLoading) {
+      setFormSubmitLoading(true);
+      setFormSubmitSuccess(false);
+      setFormSubmitError(null);
+      const formElement = document.getElementById("contactForm");
+      const submittedData = new FormData(formElement);
+      fetch(`${process.env.REACT_APP_CONTACT_FORM_API}`,
+        {
+          method: "POST",
+          body: submittedData
         }
-        setFormSubmitSuccess(true);
-        setFormSubmitLoading(false);
-      })
-      .catch((error) => {
-        setFormSubmitError(error.message);
-        setFormSubmitLoading(false);
-      });
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`${response.status}`);
+          }
+          setFormSubmitSuccess(true);
+          formElement.reset();
+          setFormSubmitLoading(false);
+        })
+        .catch((error) => {
+          setFormSubmitError(error.message);
+          setFormSubmitLoading(false);
+        });
+    }
   }
 
   let statusMessage;
@@ -46,7 +51,7 @@ export default function Contact() {
       <form id="contactForm" onSubmit={(event) => SubmitForm(event)}>
         <input placeholder="Your Name" name="Name" type="text" autoComplete="name" required />
         <input placeholder="Your Email" name="Email" type="email" autoComplete="email" required />
-        <textarea name="Message" rows="5" cols="30" placeholder="Your message here..." required/>
+        <textarea name="Message" rows="5" cols="30" placeholder="Your message here..." required />
         <input type="submit" />
       </form>
       <p>{statusMessage}</p>

@@ -24,10 +24,10 @@
   - Replace some action buttons with icons (GitHub icon, live site icon, etc.)
 
 - Styling:
-  - Make sure everything passes WCAG Standards https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#use-of-color
+  - Make sure everything passes WCAG Standards https://www.w3.org/WAI/WCAG22/quickref/?versions=2.1#use-of-color also https://webaim.org/resources/contrastchecker/
   - Make design a bit more modern. Drop shadows are a bit antiquated.
   - ~~Sticky Header~~
-  - Hamburger menu (modal through onclick prop passed from Portfolio to Header)
+  - ~~Hamburger menu (modal through onclick prop passed from Portfolio to Header)~~
   - ~~Adjust small screen margins~~
 
 

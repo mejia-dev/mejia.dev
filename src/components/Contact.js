@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 
 export default function Contact() {
 
-  // const [projectsListLoaded, setProjectsListLoaded] = useState(false);
-  // const [projectsList, setProjectsList] = useState([]);
-  // const [projectsListApiErrorMsg, setProjectsListApiErrorMsg] = useState(null);
+  const [formSubmitSuccess, setFormSubmitSuccess] = useState(false);
+  const [formSubmitError, setFormSubmitError] = useState(null);
+  const [formSubmitLoading, setFormSubmitLoading] = useState(false);
 
   function SubmitForm(event) {
     event.preventDefault();
+    setFormSubmitLoading(true);
     const formElement = document.getElementById("contactForm");
     const submittedData = new FormData(formElement);
     fetch(`${process.env.REACT_APP_CONTACT_FORM_API}`,
@@ -18,14 +19,24 @@ export default function Contact() {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
+          throw new Error(`${response.status}`);
         }
-        console.log(response);
-        return response;
+        setFormSubmitSuccess(true);
+        setFormSubmitLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        setFormSubmitError(error.message);
+        setFormSubmitLoading(false);
       });
+  }
+
+  let statusMessage;
+  if (formSubmitSuccess) {
+    statusMessage = <span>Message sent! I'll be in touch with you soon.</span>
+  } else if (formSubmitLoading) {
+    statusMessage = <span>Sending message . . .</span>
+  } else if (formSubmitError != null) {
+    statusMessage = <span>Error: {formSubmitError}</span>
   }
 
   return (
@@ -38,6 +49,7 @@ export default function Contact() {
         <input placeholder="Your Message" name="Message" type="text" required />
         <input type="submit" />
       </form>
+      <p>{statusMessage}</p>
     </React.Fragment>
   )
 }

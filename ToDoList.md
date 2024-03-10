@@ -33,3 +33,15 @@
 
 - Bugs:
   - GitHub colored dot icons show through floating header
+
+
+- Stretch Goals:
+  - Add hopping frog across bottom of page that follow mouse
+  - Add potential work experience section
+  - Add "View Full Project Archive" button
+  - Add 404 page
+
+- Wording:
+  - Contact Form: GET IN TOUCH!
+    Whether you have an idea for a project or just want to chat, feel free to shoot me an email! Say Hello
+  - Greeting "Hey, I'm Aaron"

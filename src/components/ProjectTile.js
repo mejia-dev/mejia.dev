@@ -109,17 +109,25 @@ export default function ProjectTile(props) {
         <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
       </svg> */}
       </span></h2>
-      <em>Technology:</em> <span style={{
+      <p>
+        <em>Technology: </em> 
+        <span style={{
         backgroundColor: `${props.techsUsed.color}`,
-        // position: "relative",
-        // this line was making them render on top
-        top: "1px",
-        display: "inline-block",
-        width: "12px",
-        height: "12px",
-        borderRadius: "50%"
-      }}></span>
-      <span style={{ color: `${props.techsUsed.color}` }}> {props.techsUsed.name}</span><br />
+          // position: "relative",
+          // this line was making them render on top
+          top: "1px",
+          display: "inline-block",
+          width: "12px",
+          height: "12px",
+          borderRadius: "50%"
+          }}>
+        </span>
+        <span> 
+        {props.techsUsed.name}
+        </span>
+      </p>
+      
+      {/* <br /> */}
       <p><em>Description:</em> {props.desc}</p>
 
       <p className="repoLink"><em>GitHub Link:</em> <a href={props.linkRepo} target="_blank" rel="noreferrer">{props.linkRepo.slice(8)}</a></p>

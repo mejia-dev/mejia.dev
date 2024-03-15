@@ -1,11 +1,11 @@
 body {
-  background-color: #121212;
+  background-color: #1e1e1e;
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #navBar {
-  /* background-color: #1e1e1e; */
+  /* background-color: #3e3e3e; */
   color: rgb(205, 169, 133);
   float: left;
   margin: 2%;
@@ -52,9 +52,10 @@ body {
 }
 
 #mainBodyContent {
-  float: left;
+  /* float: left; */
+  background-color: #3e3e3e;
   /* background-color: #1e1e1e; */
-  width: 70%;
+  /* width: 70%; */
   margin: 2%;
   padding: 10px;
   box-sizing: border-box;
@@ -77,9 +78,9 @@ body {
 @media screen and (max-width: 1200px) {
   #mainBodyContent {
     /* flex-direction: column; */
-    width: 98%;
+    /* width: 98%; */
     /* float: right; */
-    margin: 2%;
+    margin: 5%;
   }
 
   #navBar {
@@ -98,6 +99,9 @@ body {
   #navBar.sticky {
     position: fixed;
     top: 0;
+    background-color: #1e1e1e;
+    border-radius: unset;
+    box-shadow: 0px 10px 0px rgba(0,0,0,0.5);
   }
 
   #floatingNavBarPlaceholder.show {
@@ -185,3 +189,27 @@ a {
 
 
  */
+
+ .projectTile {
+  /* outline: solid #7180AC; */
+  color: #CDA985;
+  float: left;
+  width: 95%;
+  margin: 1%;
+  padding: 10px;
+  border-radius: 20px;
+ }
+
+ .projectTileLinkSVGDiv {
+    /* margin: 1vw; */
+    /* width: auto; */
+    /* width: 20px;
+    height: auto; */
+    display: inline-block;
+    flex-direction: column;
+ }
+
+ .projectTileLinkSVGDiv > svg {
+  /* position: relative;
+  width: 100%; */
+ }

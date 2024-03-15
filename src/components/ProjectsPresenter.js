@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import ProjectSpotlight from './ProjectSpotlight';
+import ProjectTile from './ProjectTile';
 
 export default function ProjectsPresenter(props) {
   const [displayMode, setDisplayMode] = useState("carousel");
@@ -39,7 +39,7 @@ export default function ProjectsPresenter(props) {
       {lines.map((line, lineIndex) => (
         <div key={lineIndex} className="line">
           {line.map((project, index) => (
-            <ProjectSpotlight
+            <ProjectTile
               title={project.name}
               desc={project.description}
               linkRepo={project.repo}

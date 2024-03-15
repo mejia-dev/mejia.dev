@@ -40,6 +40,7 @@
   - Add potential work experience section
   - Add "View Full Project Archive" button
   - Add 404 page
+  - All languages: https://api.github.com/repos/mejia-dev/portfolio-with-react/languages
 
 - Wording:
   - Contact Form: GET IN TOUCH!

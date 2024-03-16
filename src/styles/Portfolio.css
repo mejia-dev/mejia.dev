@@ -1,24 +1,103 @@
+/* Main Body */
 #bodyRenderer {
   display: flex;
-  justify-content: space-between;
-  gap: 10%;
+  justify-content:space-around;
+  gap: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
+
+/* NavBar */
 #navBar {
   color: #CDA985;
   display: flex;
   flex-direction: column;
+  width: 80%;
+  height: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-style: dashed;
+  border-color: red;
+}
+
+#navBarHamburger {
+  display: none;
+}
+
+#navBarPhotoNameWordArt {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#navBarPhotoProfilePic {
+  border-radius: 50%;
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#floatingNavBarPlaceholder {
+  display: none;
 }
 
 @media screen and (max-width: 900px) {
+  /* Main Body */
   #bodyRenderer {
     display: unset;
     justify-content: unset;
     gap: unset;
   }
 
+
+  /* NavBar */
   #navBar {
-  
+    width: unset;
+    height: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+
+    display: flex;
+    top: -100px;
+    transition: top 0.5s ease-in-out;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    height: auto;
+    
+  }
+
+  #navBar.sticky {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #1e1e1e;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+  }
+
+  #navBarHamburger {
+    display: unset;
+    margin: 3vw;
+    width: 10vw;
+  }
+
+  #navBarPhotoNameWordArt {
+    width: 50vw;
+  }
+
+  #navBarPhotoProfilePic {
+    margin: 3vw;
+    width: 10vw;
+  }
+
+  #navBarButtonHolder {
+    display: none;
+  }
+
+  #floatingNavBarPlaceholder.show {
+    display:inline-block;
   }
 
 }

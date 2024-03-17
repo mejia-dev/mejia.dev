@@ -82,10 +82,12 @@ export default function Portfolio() {
   return (
     <React.Fragment>
       <div id="bodyRenderer">
-        <Header
-          onClickNavButton={setSelectedPage}
-          navButtons={["Home", "About", "Contact"]}
-        />
+        <div id="headerContent">
+          <Header
+            onClickNavButton={setSelectedPage}
+            navButtons={["Home", "About", "Contact"]}
+          />
+        </div>
         <div id="mainBodyContent">{renderCurrentView()}</div>
       </div>
     </React.Fragment>

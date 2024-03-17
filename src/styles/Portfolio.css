@@ -1,22 +1,24 @@
 /* Main Body */
 #bodyRenderer {
   display: flex;
-  justify-content:space-around;
-  gap: 4%;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 
 /* NavBar */
+#headerContent {
+  flex: 40%;
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 99vh;
+  border-style: dashed;
+}
+
 #navBar {
   color: #CDA985;
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 100%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 40%;
   border-style: dashed;
   border-color: red;
 }
@@ -44,7 +46,33 @@
   display: none;
 }
 
-@media screen and (max-width: 900px) {
+.navBarButton {
+  cursor: pointer;
+  padding: 2%;
+  width: 100%;
+  border: thick;
+  border-radius: 10px;
+  text-align: center;
+  color: #CDA985;
+  font-size: 165%;
+
+  background-color: unset;
+}
+
+.navBarButton:hover {
+  outline: solid;
+}
+
+
+
+#mainBodyContent {
+  flex: 60%;
+  border-style: dashed;
+  border-color: green;
+}
+
+@media screen and (max-width: 1200px) {
+
   /* Main Body */
   #bodyRenderer {
     display: unset;
@@ -66,7 +94,7 @@
     flex-direction: row-reverse;
     justify-content: space-evenly;
     height: auto;
-    
+
   }
 
   #navBar.sticky {
@@ -74,7 +102,7 @@
     width: 100%;
     top: 0;
     background-color: #1e1e1e;
-    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
   #navBarHamburger {
@@ -97,7 +125,13 @@
   }
 
   #floatingNavBarPlaceholder.show {
-    display:inline-block;
+    display: inline-block;
+  }
+
+  #mainBodyContent {
+    width: unset;
+    height: unset;
+    overflow-y: unset;
   }
 
 }

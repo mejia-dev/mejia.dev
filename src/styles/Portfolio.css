@@ -82,6 +82,15 @@
 
 
   /* NavBar */
+  #headerContent {
+    flex: unset;
+    display: unset;
+    position: unset;
+    top: unset;
+    height: unset;
+    border-style: unset;
+  }
+  
   #navBar {
     width: unset;
     height: unset;

@@ -43,7 +43,6 @@ export default function ProjectsPresenter(props) {
               title={project.name}
               desc={project.description}
               linkRepo={project.repo}
-              techsUsed={project.language}
               stars={project.stars}
               key={index}
             />

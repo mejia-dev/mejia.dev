@@ -1,9 +1,7 @@
-import React from 'react';
-
-export default function Contact() {
+export default function Contact(): JSX.Element {
   return (
-    <React.Fragment>
+    <>
       <h3>Contact Form</h3>
-    </React.Fragment>
+    </>
   )
 }

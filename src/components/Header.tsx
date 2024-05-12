@@ -24,7 +24,7 @@ export default function Header(props: HeaderProps): JSX.Element {
 
   function renderNavButtons(): JSX.Element {
     return (
-      <div id={modalShown ? "navBarButtonHolderSmall" : "navBarButtonHolder"}>
+      <div>
         {
           props.navButtons.map((action) => (
             <span key={action + (modalShown ? "small" : "big")} className={action + (modalShown ? "small" : "big")} onClick={() => setModalShown(false)}>
@@ -56,7 +56,10 @@ export default function Header(props: HeaderProps): JSX.Element {
           {renderNavButtons()}
         </ReactModal>
         <br />
+        <div id="navBarButtonHolder">
         {renderNavButtons()}
+        </div>
+        
       </div>
     </>
   )

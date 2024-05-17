@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+#bodyRenderer {
+  display: flex;
+}
+
 #headerContent {
   flex: 40%;
   display: block;

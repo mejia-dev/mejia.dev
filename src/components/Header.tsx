@@ -31,7 +31,7 @@ export default function Header(props: HeaderProps): JSX.Element {
           props.navButtons.map((action) => (
             <span key={action + (modalShown ? "small" : "big")} className={action + (modalShown ? "small" : "big")} onClick={() => setModalShown(false)}>
               <div className={modalShown ? "navBarButtonSmall" : "navBarButton"} onClick={() => props.onClickNavButton(action)}>{action}</div>
-              <br /><br />
+              <br />
             </span>
           ))
         }
@@ -62,7 +62,7 @@ export default function Header(props: HeaderProps): JSX.Element {
   }, [])
 
   return (
-    <>
+    <div id="headerItems">
       <div id="navBar">
         <svg onClick={() => setModalShown(!modalShown)} xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navBarHamburger" viewBox="0 0 16 16">
           <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -85,11 +85,10 @@ export default function Header(props: HeaderProps): JSX.Element {
         <div id="navBarButtonHolder">
           {renderNavButtons()}
         </div>
-
       </div>
       <div id="navBarExternalLinksHolder">
         {renderExternalLinks()}
       </div>
-    </>
+    </div>
   )
 }

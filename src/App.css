@@ -62,22 +62,31 @@
   border: thick;
   border-radius: 10px;
   text-align: center;
-  color: #CDA985;
+  color: white;
   font-size: 165%;
-
   background-color: unset;
 }
 
 .navBarButton:hover {
-  outline: solid;
+  color: #CDA985;
 }
-
 
 
 #mainBodyContent {
   flex: 70%;
   border-style: dashed;
   border-color: green;
+}
+
+
+#navBarExternalLinks {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navBarExternalLinksButton:hover {
+  cursor: pointer;
+  color: #CDA985;
 }
 
 @media screen and (max-width: 1024px) {

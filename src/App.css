@@ -27,9 +27,8 @@
   color: #CDA985;
   display: flex;
   flex-direction: column;
-  /* width: 40%; */
-  border-style: dashed;
-  border-color: red;
+  /* border-style: dashed;
+  border-color: red; */
 }
 
 #navBarHamburger {
@@ -57,14 +56,12 @@
 
 .navBarButton {
   cursor: pointer;
-  padding: 2%;
   width: 100%;
-  border: thick;
-  border-radius: 10px;
   text-align: center;
   color: white;
-  font-size: 165%;
+  font-size: 150%;
   background-color: unset;
+  
 }
 
 .navBarButton:hover {
@@ -87,6 +84,21 @@
 .navBarExternalLinksButton:hover {
   cursor: pointer;
   color: #CDA985;
+}
+
+#navBarExternalLinksHolder {
+  /* border-style: dashed;
+  border-color: red; */
+}
+
+#headerItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 30vh; */
+  /* border-style: dashed;
+  border-color: purple; */
+  height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -161,5 +173,9 @@
     width: unset;
     height: 100vh;
     overflow-y: unset;
+  }
+
+  #navBarExternalLinksHolder {
+    display: none;
   }
 }

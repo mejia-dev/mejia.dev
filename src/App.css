@@ -179,3 +179,30 @@
     display: none;
   }
 }
+     
+label:hover {
+  color: #CDA985;
+}
+
+input[type=radio] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#bigOlGroupOfButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.testClass {
+  fill: currentColor;
+  height: 1.5em;
+  width: 1.5em;
+}

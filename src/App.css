@@ -195,14 +195,18 @@ input[type=radio] {
     width: 1px;
 }
 
-#bigOlGroupOfButtons {
+#projectsListControlsButtons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  width: 30%;
+  margin-left: 70%
+  
 }
 
-.testClass {
+.projectsListControlsButtonSvg {
   fill: currentColor;
   height: 1.5em;
   width: 1.5em;
+  cursor: pointer;
 }

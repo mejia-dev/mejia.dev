@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import noImage from "../assets/noImg.png";
 
 interface ProjectTileProps {
   displayType: string;
@@ -16,7 +17,7 @@ interface ImageObject {
 export default function ProjectTile(props: ProjectTileProps): JSX.Element {
   // this should call GH API to check stars
   const [imgSrc, setImgSrc] = useState<string>("");
-  
+
   useEffect(() => {
     async function getImgSrc(): Promise<void> {
       try {
@@ -24,7 +25,7 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
         setImgSrc(image.default);
       }
       catch (error) {
-        console.error("Error: ", error);
+        setImgSrc(noImage);
       }
     };
     getImgSrc();

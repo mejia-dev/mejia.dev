@@ -33,15 +33,15 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
 
   return (
     <div className={"projectTile" + props.displayType}>
-      <img src={imgSrc} alt={props.title + " screenshot"}/>
+      <img src={imgSrc} alt={props.title + " screenshot"} style={{width:"100%"}}/>
       <p>
-        <strong>Project Name:</strong> {props.title}
+        {props.title}
         <br />
-        <strong>Description:</strong> {props.desc}
-        <br />
+        {/* <strong>Description:</strong> {props.desc} */}
+        {/* <br />
         <a href={"https://github.com/mejia-dev/" + props.repoName} target="_blank">GitHub Repo</a>
         <br />
-        {props.liveLink && (<a href={props.liveLink} target="_blank">Live Site</a>)}
+        {props.liveLink && (<a href={props.liveLink} target="_blank">Live Site</a>)} */}
       </p>
     </div>
   )

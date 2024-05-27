@@ -59,7 +59,7 @@
   color: white;
   font-size: 150%;
   background-color: unset;
-  
+
 }
 
 .navBarButton:hover {
@@ -99,6 +99,37 @@
   height: 100%;
 }
 
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+
+}
+
+#contactForm>textarea {
+  resize: vertical;
+  font: unset;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px
+}
+
+#contactFormDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contactFormDetails>input {
+  width: 45%;
+  font: unset;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
 
   /* Main Body */
@@ -120,7 +151,7 @@
     height: unset;
     border-style: unset;
   }
-  
+
   #navBar {
     width: unset;
     height: unset;
@@ -177,20 +208,20 @@
     display: none;
   }
 }
-     
+
 label:hover {
   color: #CDA985;
 }
 
 input[type=radio] {
-    border: 0;
-    clip: rect(0, 0, 0, 0);
-    height: 1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute !important;
-    white-space: nowrap;
-    width: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
 }
 
 #projectsListControlsButtons {
@@ -199,7 +230,6 @@ input[type=radio] {
   justify-content: space-evenly;
   width: 30%;
   margin-left: 70%
-  
 }
 
 .projectsListControlsButtonSvg {
@@ -208,3 +238,12 @@ input[type=radio] {
   width: 1.5em;
   cursor: pointer;
 }
+
+.projectsViewerList {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsViewerGrid {}
+
+.projectsViewerCarousel {}

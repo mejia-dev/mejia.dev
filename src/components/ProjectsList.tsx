@@ -4,6 +4,7 @@ import ProjectTile from "./ProjectTile";
 interface ProjectData {
   title: string;
   desc: string;
+  photoName: string;
   repoName: string;
   liveLink: string;
 }
@@ -14,17 +15,47 @@ export default function ProjectsList(): JSX.Element {
 
   const currentProjectsList: ProjectData[] = [
     {
-      title: "Test",
-      desc: "Sample description!",
+      title: "Rhythm Runner",
+      desc: "Music-based platformer game in TypeScript!",
+      photoName: "1.png",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
     },
     {
-      title: "Test2",
-      desc: "Sample2 description!",
+      title: "Pierre's Treats",
+      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
+      photoName: "2.png",
       repoName: "PierresTreats",
-      liveLink: "https://mejia.dev/2",
-    }
+      liveLink: "",
+    },
+    {
+      title: "Rhythm Runner",
+      desc: "Music-based platformer game in TypeScript!",
+      photoName: "3.png",
+      repoName: "rhythmrunner",
+      liveLink: "https://mejia.dev/rhythm-runner",
+    },
+    {
+      title: "Pierre's Treats",
+      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
+      photoName: "4.png",
+      repoName: "PierresTreats",
+      liveLink: "",
+    },
+    {
+      title: "Rhythm Runner",
+      desc: "Music-based platformer game in TypeScript!",
+      photoName: "5.png",
+      repoName: "rhythmrunner",
+      liveLink: "https://mejia.dev/rhythm-runner",
+    },
+    {
+      title: "Pierre's Treats",
+      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
+      photoName: "6.png",
+      repoName: "PierresTreats",
+      liveLink: "",
+    },
   ]
 
   return (
@@ -56,14 +87,13 @@ export default function ProjectsList(): JSX.Element {
         </form>
       </div>
       <div id="projectsListContent" className={`projectsViewer${viewerType}`}>
-        {viewerType}
-
         {currentProjectsList.map((project, projectIndex) => (
           <ProjectTile
             displayType={viewerType}
             key={projectIndex}
             title={project.title}
             desc={project.desc}
+            photoName={project.photoName}
             repoName={project.repoName}
             liveLink={project.liveLink}
           />

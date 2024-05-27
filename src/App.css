@@ -244,6 +244,20 @@ input[type=radio] {
   flex-direction: column;
 }
 
-.projectsViewerGrid {}
+.projectTileList {
+  width: 100%;
+}
 
-.projectsViewerCarousel {}
+.projectsViewerGrid {
+  display: flex;
+  flex-direction: grid;
+}
+
+.projectTileGrid {
+  width: 30%;
+}
+
+.projectsViewerCarousel {
+  
+}
+

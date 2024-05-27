@@ -1,8 +1,31 @@
-import { useState } from "react"
+import { useState } from "react";
+import ProjectTile from "./ProjectTile";
+
+interface ProjectData {
+  title: string;
+  desc: string;
+  repoName: string;
+  liveLink: string;
+}
 
 export default function ProjectsList(): JSX.Element {
 
   const [viewerType, setViewerType] = useState<string>("List");
+
+  const currentProjectsList: ProjectData[] = [
+    {
+      title: "Test",
+      desc: "Sample description!",
+      repoName: "rhythmrunner",
+      liveLink: "https://mejia.dev/rhythm-runner",
+    },
+    {
+      title: "Test2",
+      desc: "Sample2 description!",
+      repoName: "PierresTreats",
+      liveLink: "https://mejia.dev/2",
+    }
+  ]
 
   return (
     <>
@@ -34,6 +57,19 @@ export default function ProjectsList(): JSX.Element {
       </div>
       <div id="projectsListContent" className={`projectsViewer${viewerType}`}>
         {viewerType}
+
+        {currentProjectsList.map((project, projectIndex) => (
+          <ProjectTile
+            displayType={viewerType}
+            key={projectIndex}
+            title={project.title}
+            desc={project.desc}
+            repoName={project.repoName}
+            liveLink={project.liveLink}
+          />
+        ))}
+
+
       </div>
     </>
   )

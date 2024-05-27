@@ -256,6 +256,15 @@ input[type=radio] {
 
 .projectTileGrid {
   width: 30%;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.projectTileGrid > p {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
 }
 
 .projectsViewerCarousel {

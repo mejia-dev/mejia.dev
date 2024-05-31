@@ -7,7 +7,7 @@ interface ProjectTileProps {
   desc: string;
   photoName: string;
   repoName: string;
-  liveLink: string | null;
+  liveLink: string;
 }
 
 interface ImageObject {
@@ -36,6 +36,22 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
       <img src={imgSrc} alt={props.title + " screenshot"} />
       <div>
         <span>{props.title}</span>
+        {props.displayType === "List" && (
+          <div>
+            <p>{props.desc}</p>
+            <p>
+              <a href={"https://github.com/mejia-dev/" + props.repoName} target="_blank">GitHub Repository</a>
+              {props.liveLink != "" && (
+                <>
+                <br />
+                <a href={props.liveLink} target="_blank">Live Site</a>
+                </>
+              )}
+              
+            </p>
+          </div>
+
+        )}
       </div>
     </div>
   )

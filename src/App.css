@@ -260,6 +260,7 @@ input[type=radio] {
   /* border-radius: 20px; */
   width: 30%;
   position: relative;
+  cursor: pointer;
 }
 
 .projectTileGrid img {
@@ -282,6 +283,10 @@ input[type=radio] {
 
 .projectTileGrid span {
   padding: 10px
+}
+
+.projectTileGrid:hover span {
+  text-shadow: white 1px 0 20px;
 }
 
 .projectsViewerCarousel {

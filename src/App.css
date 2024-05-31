@@ -252,6 +252,8 @@ input[type=radio] {
   display: flex;
   flex-direction: grid;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 20px;
 }
 
 .projectTileGrid {

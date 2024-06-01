@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import ReactModal, { Styles } from "react-modal";
+import ReactModal, { Styles } from "react-modal";
 import noImage from "../assets/noImg.png";
 
 interface ProjectTileProps {
@@ -19,11 +19,23 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
   const [imgSrc, setImgSrc] = useState<string>("");
   const [modalShown, setModalShown] = useState<boolean>(false);
 
-  function handleOnClickAction(): void {
-    // if displayType is carousel or list, do nothing
-    // if displayType is grid, show Modal
+  const modalStyling: Styles = {
+    content: {
+      top: '20%',
+      bottom: 'auto',
+      backgroundColor: "#242424",
+      borderColor: "#141414",
+      display: "flex",
+    },
+    overlay: {
+      backgroundColor: "rgba(0, 0, 0, 0.8)"
+    }
+  }
 
-    // alternatively, useEffect to check if displayType is list, and append OnClick action to show modal if needed?
+  function handleOnClickAction(): void {
+    if (props.displayType === "Grid") {
+      setModalShown(true);
+    }
   }
 
   function renderProjectDetails(): JSX.Element {
@@ -38,8 +50,8 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
               <a href={props.liveLink} target="_blank">Live Site</a>
             </>
           )}
-        {/* add languages/techs here? */}
-        {/* add stars here? */}
+          {/* add languages/techs here? */}
+          {/* add stars here? */}
         </p>
       </div>
     )
@@ -56,29 +68,41 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
       }
     };
     getImgSrc();
-  }, [props.photoName])
+  }, [props.photoName]);
 
-  // useEffect(() => {
-  //   ReactModal.setAppElement(document.getElementById("mainBodyContent") as HTMLElement)
-  // }, [])
+  useEffect(() => {
+    ReactModal.setAppElement(document.getElementById("mainBodyContent") as HTMLElement)
+  }, []);
 
   return (
-    <div className={"projectTile" + props.displayType}>
-      <img src={imgSrc} alt={props.title + " screenshot"} />
-      <div>
-        <span>{props.title}</span>
-        {/* <ReactModal
-          contentLabel={props.title + " Project Details"}
-          isOpen={modalShown}
-          onRequestClose={() => setModalShown(!modalShown)}
-        // style={modalStyling}
-        >
-          {renderProjectDetails()}
-        </ReactModal> */}
-        {props.displayType === "List" &&
-          renderProjectDetails()
-        }
+    <>
+      <div className={"projectTile" + props.displayType} onClick={handleOnClickAction}>
+        <img src={imgSrc} alt={props.title + " screenshot"} />
+        <div>
+          <span className="projectTileTitle">{props.title}</span>
+
+          {props.displayType === "List" &&
+            renderProjectDetails()
+          }
+        </div>
       </div>
-    </div>
+      <ReactModal
+        contentLabel={props.title + " Project Details"}
+        isOpen={modalShown}
+        onRequestClose={() => setModalShown(!modalShown)}
+        style={modalStyling}
+      >
+        <img src={imgSrc} alt={props.title + " screenshot"} className="projectTileGridModalImg" />
+        <div className="projectTileGridModalContent">
+          <span className="projectTileGridModalTitle">{props.title}</span>
+          {renderProjectDetails()}
+        </div>
+
+
+
+
+      </ReactModal>
+    </>
+
   )
 }

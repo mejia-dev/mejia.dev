@@ -258,6 +258,7 @@ input[type=radio] {
 .projectTileList img {
   flex: 50%;
   width: 50%;
+  height: 50%;
   margin: 1%;
 }
 
@@ -267,7 +268,7 @@ input[type=radio] {
   margin: 1%;
 }
 
-.projectTileList span {
+.projectTileList .projectTileTitle {
   font-size: larger;
 }
 
@@ -304,15 +305,32 @@ input[type=radio] {
   padding: 10px 0;
 }
 
-.projectTileGrid span {
+.projectTileGrid .projectTileTitle {
   padding: 10px
 }
 
-.projectTileGrid:hover span {
+.projectTileGrid:hover .projectTileTitle {
   text-shadow: white 1px 0 20px;
 }
 
-.projectsViewerCarousel {
-
+.projectTileGridModalTitle {
+  font-size: larger;
 }
 
+.projectTileGridModalImg {
+  flex: 50%;
+  width: 50%;
+  height: 50%;
+  margin: 1%;
+}
+
+.projectTileGridModalContent {
+  flex: 50%;
+  width: 100%;
+  margin: 1%;
+}
+
+
+.projectsViewerCarousel {
+  
+}

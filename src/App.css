@@ -69,8 +69,8 @@
 
 #mainBodyContent {
   flex: 70%;
-  border-style: dashed;
-  border-color: green;
+  /* border-style: dashed; */
+  /* border-color: green; */
 }
 
 
@@ -246,6 +246,29 @@ input[type=radio] {
 
 .projectTileList {
   width: 100%;
+  display: flex;
+  padding: 1%;
+}
+
+.projectTileList:hover {
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.projectTileList img {
+  flex: 50%;
+  width: 50%;
+  margin: 1%;
+}
+
+.projectTileList div {
+  flex: 50%;
+  width: 100%;
+  margin: 1%;
+}
+
+.projectTileList span {
+  font-size: larger;
 }
 
 .projectsViewerGrid {

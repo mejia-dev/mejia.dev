@@ -9,6 +9,7 @@ interface ProjectTileProps {
   photoName: string;
   repoName: string;
   liveLink: string;
+  techs: string[];
 }
 
 interface ImageObject {
@@ -41,6 +42,11 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
   function renderProjectDetails(): JSX.Element {
     return (
       <div>
+        <p className="projectTileDetailsTechsList">
+        {props.techs.map((tech, techIndex) => (
+          <span key={tech + techIndex}>{tech}</span>
+        ))}
+        </p>
         <p>{props.desc}</p>
         <p>
           <a href={"https://github.com/mejia-dev/" + props.repoName} target="_blank">GitHub Repository</a>

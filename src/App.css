@@ -275,20 +275,19 @@ input[type=radio] {
 }
 
 .projectTileGrid {
-  /* border-radius: 20px; */
   width: 30%;
   position: relative;
   cursor: pointer;
 }
 
 .projectTileGrid img {
-  /* border-radius: 20px; */
+  border-radius: 10px;
   width: 100%;
   height: auto;
 }
 
 .projectTileGrid div {
-  /* border-radius: 20px; */
+  border-radius: 10px;
   position: absolute;
   bottom: 0;
   width: 100%;

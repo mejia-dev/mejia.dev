@@ -19,15 +19,16 @@ body {
   display: flex;
   flex-direction: column;
   width: 33.33%;
-  padding-top: 2rem;
-  height: 88vh;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  height: 85vh;
+  padding-bottom: 3rem;
   justify-content: space-between;
 }
 
 #mainBodyContent {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-right: 1rem;
+  padding-bottom: 3rem;
   height: 100%;
   width: 66.66%;
 }

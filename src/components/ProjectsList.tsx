@@ -7,6 +7,7 @@ interface ProjectData {
   photoName: string;
   repoName: string;
   liveLink: string;
+  techs: string[];
 }
 
 export default function ProjectsList(): JSX.Element {
@@ -20,6 +21,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "1",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
+      techs: ["React","TypeScript","Vite","Web Audio API"]
     },
     {
       title: "Pierre's Treats",
@@ -27,6 +29,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "2",
       repoName: "PierresTreats",
       liveLink: "",
+      techs: ["C#","MySQL", ".NET", "EFCore"]
     },
     {
       title: "Rhythm Runner",
@@ -34,6 +37,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "3",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
+      techs: ["React","TypeScript","Vite","Web Audio API"]
     },
     {
       title: "Pierre's Treats",
@@ -41,6 +45,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "4",
       repoName: "PierresTreats",
       liveLink: "",
+      techs: ["C#","MySQL", ".NET", "EFCore"]
     },
     {
       title: "Rhythm Runner",
@@ -48,6 +53,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "5",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
+      techs: ["React","TypeScript","Vite","Web Audio API"]
     },
     {
       title: "Pierre's Treats",
@@ -55,6 +61,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "6",
       repoName: "PierresTreats",
       liveLink: "",
+      techs: ["C#","MySQL", ".NET", "EFCore"]
     },
     {
       title: "Another Project",
@@ -62,6 +69,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "7",
       repoName: "test",
       liveLink: "https://test.com",
+      techs: ["Python","Django","Tailwind"]
     },
   ]
 
@@ -97,6 +105,7 @@ export default function ProjectsList(): JSX.Element {
             photoName={project.photoName}
             repoName={project.repoName}
             liveLink={project.liveLink}
+            techs={project.techs}
           />
         ))}
 

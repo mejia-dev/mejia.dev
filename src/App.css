@@ -4,29 +4,37 @@
   text-align: center;
 }
 
+body {
+  margin: 0px;
+}
+
 #bodyRenderer {
   display: flex;
-  /* border-color: pink;
-  border-style: dashed; */
-  border-radius: 20rem;
-  height: 97vh;
-  width: 100%
+  justify-content: space-between;
 }
 
 #headerContent {
-  flex: 30%;
-  padding: 2rem;
-  display: block;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  padding-top: 2rem;
+  height: 100%;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  /* gap: 10em; */
+}
+
+#mainBodyContent {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+  width: 66.66%;
 }
 
 #navBar {
   color: #CDA985;
-  display: flex;
-  flex-direction: column;
-  /* border-style: dashed;
-  border-color: red; */
 }
 
 #navBarHamburger {
@@ -66,14 +74,6 @@
   color: #CDA985;
 }
 
-
-#mainBodyContent {
-  flex: 70%;
-  /* border-style: dashed; */
-  /* border-color: green; */
-}
-
-
 #navBarExternalLinks {
   display: flex;
   justify-content: space-evenly;
@@ -87,16 +87,10 @@
 #navBarExternalLinksHolder {
   /* border-style: dashed;
   border-color: red; */
-}
+  
+  /* display: flex; */
+  /* align-items: center; */
 
-#headerItems {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* gap: 30vh; */
-  /* border-style: dashed;
-  border-color: purple; */
-  height: 100%;
 }
 
 #contactForm {
@@ -199,6 +193,7 @@
   }
 
   #mainBodyContent {
+    padding: unset;
     width: unset;
     height: 100vh;
     overflow-y: unset;

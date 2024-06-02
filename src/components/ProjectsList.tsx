@@ -11,7 +11,7 @@ interface ProjectData {
 
 export default function ProjectsList(): JSX.Element {
 
-  const [viewerType, setViewerType] = useState<string>("List");
+  const [viewerType, setViewerType] = useState<string>("Grid");
 
   const currentProjectsList: ProjectData[] = [
     {

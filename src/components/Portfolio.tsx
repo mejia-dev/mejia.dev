@@ -9,7 +9,7 @@ export default function Portfolio(): JSX.Element {
   const [selectedPage, setSelectedPage] = useState<string>("Home");
 
   function getSelectedPage(): JSX.Element {
-    switch(selectedPage) {
+    switch (selectedPage) {
       case "Contact": return (<Contact />);
       case "Projects": return (<ProjectsList />);
       default: return (<About />);
@@ -19,13 +19,13 @@ export default function Portfolio(): JSX.Element {
   return (
     <>
       <div id="bodyRenderer">
-        <div id="headerContent">
-          <Header 
+        <header id="headerContent">
+          <Header
             onClickNavButton={setSelectedPage}
             navButtons={["Home", "Contact", "Projects"]}
           />
-        </div>
-        <div id="mainBodyContent">{getSelectedPage()}</div>
+        </header>
+        <main id="mainBodyContent">{getSelectedPage()}</main>
       </div>
     </>
   )

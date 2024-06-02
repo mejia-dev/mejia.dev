@@ -62,7 +62,7 @@ export default function Header(props: HeaderProps): JSX.Element {
   }, [])
 
   return (
-    <div id="headerItems">
+    <>
       <div id="navBar">
         <svg onClick={() => setModalShown(!modalShown)} xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navBarHamburger" viewBox="0 0 16 16">
           <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -89,6 +89,6 @@ export default function Header(props: HeaderProps): JSX.Element {
       <div id="navBarExternalLinksHolder">
         {renderExternalLinks()}
       </div>
-    </div>
+    </>
   )
 }

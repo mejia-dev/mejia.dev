@@ -66,7 +66,7 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
       catch (error) {
         setImgSrc(noImage);
       }
-    };
+    }
     getImgSrc();
   }, [props.photoName]);
 

@@ -147,6 +147,7 @@ input[type=radio] {
 }
 
 .projectsViewerList {
+  margin: 1rem;
   display: flex;
   flex-direction: column;
 }

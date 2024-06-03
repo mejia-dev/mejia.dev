@@ -41,11 +41,11 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
 
   function renderProjectDetails(): JSX.Element {
     return (
-      <div>
+      <div className="projectTileDetails">
         <p className="projectTileDetailsTechsList">
-        {props.techs.map((tech, techIndex) => (
-          <span key={tech + techIndex}>{tech}</span>
-        ))}
+          {props.techs.map((tech, techIndex) => (
+            <span key={tech + techIndex}>{tech}</span>
+          ))}
         </p>
         <p>{props.desc}</p>
         <p>
@@ -56,7 +56,6 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
               <a href={props.liveLink} target="_blank">Live Site</a>
             </>
           )}
-          {/* add languages/techs here? */}
           {/* add stars here? */}
         </p>
       </div>

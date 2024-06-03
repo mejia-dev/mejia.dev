@@ -250,6 +250,7 @@ input[type=radio] {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  row-gap: .5rem;
 }
 
 .projectTileDetailsTechsList > span {

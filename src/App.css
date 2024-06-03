@@ -208,6 +208,11 @@ body {
   #navBarExternalLinksHolder {
     display: none;
   }
+
+  .projectTileList {
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
 }
 
 label:hover {

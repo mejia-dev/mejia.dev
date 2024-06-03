@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProjectTile from "./ProjectTile";
+import { useMediaQuery } from "react-responsive";
 
 interface ProjectData {
   title: string;
@@ -13,6 +14,7 @@ interface ProjectData {
 export default function ProjectsList(): JSX.Element {
 
   const [viewerType, setViewerType] = useState<string>("Grid");
+  const isSmallScreen: boolean = useMediaQuery({query:"(max-width: 1000px)"});
 
   const currentProjectsList: ProjectData[] = [
     {
@@ -71,7 +73,11 @@ export default function ProjectsList(): JSX.Element {
       liveLink: "https://test.com",
       techs: ["Python","Django","Tailwind"]
     },
-  ]
+  ];
+
+  useEffect(() => {
+    if (isSmallScreen) setViewerType("List");
+  }, [])
 
   return (
     <>

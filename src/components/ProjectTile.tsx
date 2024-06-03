@@ -24,7 +24,7 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
 
   const modalStyling: Styles = {
     content: {
-      top: '20%',
+      top: '10vh',
       bottom: 'auto',
       left: '10%',
       right: '10%',

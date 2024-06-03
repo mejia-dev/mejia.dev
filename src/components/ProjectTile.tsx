@@ -24,11 +24,15 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
     content: {
       top: '20%',
       bottom: 'auto',
+      left: '10%',
+      right: '10%',
+      padding: "1rem",
       backgroundColor: "#242424",
       borderColor: "#141414",
       display: "flex",
     },
     overlay: {
+      
       backgroundColor: "rgba(0, 0, 0, 0.8)"
     }
   }

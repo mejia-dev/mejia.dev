@@ -188,6 +188,10 @@ body {
     display: none;
   }
 
+  #navBarModalContent a:hover {
+    color: #CDA985;
+  }
+
   #floatingNavBarPlaceholder.show {
     display: inline-block;
   }

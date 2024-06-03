@@ -282,52 +282,25 @@ input[type=radio] {
 }
 
 @media screen and (max-width: 1024px) {
-
-  /* Main Body */
   #bodyRenderer {
-    display: unset;
-    justify-content: unset;
-    gap: unset;
-    width: unset;
-    height: 50px;
+    display: block;
+    height: 100vh;
+    border-style: unset;
+    box-sizing: unset;
   }
 
-
-  /* NavBar */
   #headerContent {
-    flex: unset;
-    display: unset;
-    position: unset;
-    top: unset;
-    height: unset;
-    border-style: unset;
+    display: inline;
   }
 
   #navBar {
-    width: unset;
-    height: unset;
-    margin-top: unset;
-    margin-bottom: unset;
-
     display: flex;
-    top: -100px;
-    transition: top 0.5s ease-in-out;
     flex-direction: row-reverse;
     justify-content: space-evenly;
-    height: auto;
-
     padding-top: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
 
-  }
-
-  #navBar.sticky {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: #1e1e1e;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   }
 
   #navBarHamburger {
@@ -353,17 +326,12 @@ input[type=radio] {
     color: #CDA985;
   }
 
-  #floatingNavBarPlaceholder.show {
-    display: inline-block;
-  }
-
   #mainBodyContent {
     padding: unset;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 0;
     width: unset;
-    height: 100vh;
-    overflow-y: unset;
   }
 
   #navBarExternalLinksHolder {
@@ -373,6 +341,7 @@ input[type=radio] {
   .projectTileList {
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    padding: unset;
   }
 
   .projectTileGrid {

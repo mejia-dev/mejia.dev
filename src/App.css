@@ -159,6 +159,10 @@ body {
     justify-content: space-evenly;
     height: auto;
 
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
   }
 
   #navBar.sticky {
@@ -198,6 +202,8 @@ body {
 
   #mainBodyContent {
     padding: unset;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: unset;
     height: 100vh;
     overflow-y: unset;

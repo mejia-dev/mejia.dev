@@ -339,6 +339,15 @@ input[type=radio] {
   font-size: larger;
 }
 
+.projectTileGridModal {
+  display: flex;
+}
+
+.projectTileGridModalSmall {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .projectTileGridModalImg {
   flex: 50%;
   width: 50%;

@@ -11,6 +11,8 @@ body {
 #bodyRenderer {
   display: flex;
   justify-content: space-between;
+  height: 100vh;
+  background-color: rgba(36, 36, 36, .75);
 }
 
 #headerContent {
@@ -29,8 +31,9 @@ body {
   padding-top: 3rem;
   padding-right: 1rem;
   padding-bottom: 3rem;
-  height: 100%;
+  height: 85vh;
   width: 66.66%;
+  overflow-y: scroll;
 }
 
 #navBar {
@@ -67,7 +70,6 @@ body {
   color: white;
   font-size: 150%;
   background-color: unset;
-
 }
 
 .navBarButton:hover {
@@ -84,16 +86,10 @@ body {
   color: #CDA985;
 }
 
-#navBarExternalLinksHolder {
-  /* border-style: dashed;
-  border-color: red; */
-}
-
 #contactForm {
   display: flex;
   flex-direction: column;
   padding: 5%;
-
 }
 
 #contactForm>textarea {

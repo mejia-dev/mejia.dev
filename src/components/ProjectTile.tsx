@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactModal, { Styles } from "react-modal";
 import noImage from "../assets/noImg.png";
+import { useMediaQuery } from "react-responsive";
 
 interface ProjectTileProps {
   displayType: string;
@@ -19,6 +20,7 @@ interface ImageObject {
 export default function ProjectTile(props: ProjectTileProps): JSX.Element {
   const [imgSrc, setImgSrc] = useState<string>("");
   const [modalShown, setModalShown] = useState<boolean>(false);
+  const isSmallScreen: boolean = useMediaQuery({ query: "(max-width: 1000px)" });
 
   const modalStyling: Styles = {
     content: {
@@ -29,10 +31,9 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
       padding: "1rem",
       backgroundColor: "#242424",
       borderColor: "#141414",
-      display: "flex",
     },
     overlay: {
-      
+
       backgroundColor: "rgba(0, 0, 0, 0.8)"
     }
   }
@@ -89,7 +90,6 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
         <img src={imgSrc} alt={props.title + " screenshot"} />
         <div>
           <span className="projectTileTitle">{props.title}</span>
-
           {props.displayType === "List" &&
             renderProjectDetails()
           }
@@ -101,15 +101,13 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
         onRequestClose={() => setModalShown(!modalShown)}
         style={modalStyling}
       >
-        <img src={imgSrc} alt={props.title + " screenshot"} className="projectTileGridModalImg" />
-        <div className="projectTileGridModalContent">
-          <span className="projectTileGridModalTitle">{props.title}</span>
-          {renderProjectDetails()}
+        <div className={isSmallScreen ? "projectTileGridModalSmall" : "projectTileGridModal"}>
+          <img src={imgSrc} alt={props.title + " screenshot"} className="projectTileGridModalImg" />
+          <div className="projectTileGridModalContent">
+            <span className="projectTileGridModalTitle">{props.title}</span>
+            {renderProjectDetails()}
+          </div>
         </div>
-
-
-
-
       </ReactModal>
     </>
 

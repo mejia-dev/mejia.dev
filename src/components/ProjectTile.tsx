@@ -24,10 +24,12 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
 
   const modalStyling: Styles = {
     content: {
-      top: '10vh',
-      bottom: 'auto',
-      left: '10%',
-      right: '10%',
+      position: "fixed",
+      top: "50%",
+      bottom: "auto",
+      left: "10%",
+      right: "10%",
+      transform: "translate(0%,-50%)",
       padding: "1rem",
       backgroundColor: "#242424",
       borderColor: "#141414",

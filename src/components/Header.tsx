@@ -17,7 +17,8 @@ export default function Header(props: HeaderProps): JSX.Element {
       top: '20%',
       bottom: 'auto',
       backgroundColor: "#242424",
-      borderColor: "#141414"
+      borderColor: "#141414",
+      textAlign: "center",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.8)"

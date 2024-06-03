@@ -19,7 +19,7 @@ export default function ProjectsList(): JSX.Element {
   const currentProjectsList: ProjectData[] = [
     {
       title: "Rhythm Runner",
-      desc: "Music-based platformer game in TypeScript!",
+      desc: "Music-based platformer game in TypeScript! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat rerum enim, atque magni dolores sapiente aliquam quasi perferendis, saepe similique earum corporis quisquam ad deleniti voluptatum dolore explicabo velit vero.",
       photoName: "1",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
@@ -77,7 +77,7 @@ export default function ProjectsList(): JSX.Element {
 
   useEffect(() => {
     if (isSmallScreen) setViewerType("List");
-  }, [])
+  }, [isSmallScreen]);
 
   return (
     <>

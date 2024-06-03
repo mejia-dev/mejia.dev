@@ -10,8 +10,10 @@ export default function About(): JSX.Element {
         <p>
           I'm currently interning with a company that builds case management software for nonprofits, utilizing my knowledge of C# to write tests for the application in Selenium, and making use of my technical writing expertise to update the user guides.
         </p>
+        <p>
+          In my downtime, you can find me making music, modding games, and taking photos.
+        </p>
       </div>
-      <h3>🐸</h3>
     </>
   )
 }

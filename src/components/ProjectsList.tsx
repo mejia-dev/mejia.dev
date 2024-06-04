@@ -50,12 +50,12 @@ export default function ProjectsList(): JSX.Element {
       techs: ["C#","MySQL", ".NET", "EFCore"]
     },
     {
-      title: "Rhythm Runner",
-      desc: "Music-based platformer game in TypeScript!",
-      photoName: "5",
-      repoName: "rhythmrunner",
-      liveLink: "https://mejia.dev/rhythm-runner",
-      techs: ["React","TypeScript","Vite","Web Audio API"]
+      title: "Pierre's Nightmare",
+      desc: 'Built in four days by a team of four devs, this Unity-powered "horror" survival game allows you to experience the nightmare of a baker named Pierre. How long can you last on an island while being attacked by delicious pastries?',
+      photoName: "pierresnightmare",
+      repoName: "PierresNightmare",
+      liveLink: "https://mejia.dev/pierres-horror/",
+      techs: ["C#","Unity","Visual Studio"]
     },
     {
       title: "Pierre's Treats",

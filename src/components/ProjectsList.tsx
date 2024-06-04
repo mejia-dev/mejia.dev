@@ -19,8 +19,8 @@ export default function ProjectsList(): JSX.Element {
   const currentProjectsList: ProjectData[] = [
     {
       title: "Rhythm Runner",
-      desc: "Music-based platformer game in TypeScript! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat rerum enim, atque magni dolores sapiente aliquam quasi perferendis, saepe similique earum corporis quisquam ad deleniti voluptatum dolore explicabo velit vero.",
-      photoName: "1",
+      desc: "Inspired by retro Windows Media Player's built-in visualizers, Rhythm Runner is a music-based platformer game built fully in vanilla TypeScript! Upload an audio file, then run through a level generated directly from the audio data while dodging obstacles that get in the way.",
+      photoName: "rhythmrunner",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
       techs: ["React","TypeScript","Vite","Web Audio API"]

@@ -1,0 +1,350 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  margin: 0px;
+  background-color: rgba(36, 36, 36, .75);
+}
+
+#bodyRenderer {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  border-radius: 20px;
+  border-style: outset;
+  border-color: antiquewhite;
+  box-sizing: border-box;
+}
+
+#headerContent {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  padding-top: 3rem;
+  height: 85vh;
+  padding-bottom: 3rem;
+  justify-content: space-between;
+}
+
+#mainBodyContent {
+  padding-top: 3rem;
+  padding-right: 1rem;
+  padding-bottom: 3rem;
+  height: 85vh;
+  width: 66.66%;
+  overflow-y: auto;
+}
+
+#navBar {
+  color: #CDA985;
+}
+
+#navBarHamburger {
+  display: none;
+}
+
+#navBarPhotoNameWordArt {
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#navBarPhotoProfilePic {
+  border-radius: 50%;
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#floatingNavBarPlaceholder {
+  display: none;
+}
+
+.navBarButton {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 150%;
+  background-color: unset;
+}
+
+.navBarButton:hover {
+  color: #CDA985;
+}
+
+#navBarExternalLinks {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navBarExternalLinksButton:hover {
+  cursor: pointer;
+  color: #CDA985;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+#contactForm>textarea {
+  resize: vertical;
+  font: unset;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px
+}
+
+#contactFormDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+#contactFormDetails>input {
+  width: 45%;
+  font: unset;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+label:hover {
+  color: #CDA985;
+}
+
+input[type=radio] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+#projectsListControlsButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30%;
+  margin-left: 70%
+}
+
+.projectsListControlsButtonSvg {
+  fill: currentColor;
+  height: 1.5em;
+  width: 1.5em;
+  cursor: pointer;
+}
+
+.projectsViewerList {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTileDetailsTechsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: .5rem;
+}
+
+.projectTileDetailsTechsList>span {
+  border-style: solid;
+  color: #CDA985;
+  border-color: #CDA985;
+  font-size: smaller;
+  font-weight: bold;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: 10px;
+}
+
+.projectTileDetails a {
+  color: #CDA985;
+}
+
+.projectTileList {
+  width: 100%;
+  display: flex;
+  padding: 1%;
+}
+
+.projectTileList:hover {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.projectTileList img {
+  flex: 50%;
+  width: 50%;
+  height: 50%;
+  margin: 1%;
+}
+
+.projectTileList div {
+  flex: 50%;
+  width: 100%;
+  margin: 1%;
+}
+
+.projectTileList .projectTileTitle {
+  font-size: larger;
+}
+
+.projectsViewerGrid {
+  display: flex;
+  flex-direction: grid;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.projectTileGrid {
+  width: 30%;
+  position: relative;
+  cursor: pointer;
+}
+
+.projectTileGrid img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.projectTileGrid div {
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 85%);
+  color: white;
+  padding: 10px 0;
+}
+
+.projectTileGrid .projectTileTitle {
+  padding: 10px
+}
+
+.projectTileGrid:hover .projectTileTitle {
+  text-shadow: white 1px 0 20px;
+}
+
+.projectTileGridModalTitle {
+  font-size: larger;
+}
+
+.projectTileGridModal {
+  display: flex;
+}
+
+.projectTileGridModalSmall {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  max-width: 90vw;
+}
+
+.projectTileGridModalImg {
+  flex: 50%;
+  width: 50%;
+  height: 50%;
+  margin: 1%;
+}
+
+.projectTileGridModalContent {
+  text-align: center;
+  flex: 50%;
+  width: 100%;
+  margin: 1%;
+}
+
+#aboutText {
+  font-size: larger;
+  text-align: left;
+  margin: 5%;
+}
+
+@media screen and (max-width: 1024px) {
+  #bodyRenderer {
+    display: block;
+    height: 100vh;
+    border-style: unset;
+    box-sizing: unset;
+  }
+
+  #headerContent {
+    display: inline;
+  }
+
+  #navBar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+  }
+
+  #navBarHamburger {
+    display: unset;
+    margin: 3vw;
+    width: 10vw;
+  }
+
+  #navBarPhotoNameWordArt {
+    width: 50vw;
+  }
+
+  #navBarPhotoProfilePic {
+    margin: 3vw;
+    width: 10vw;
+  }
+
+  #navBarButtonHolder {
+    display: none;
+  }
+
+  #navBarModalContent a:hover {
+    color: #CDA985;
+  }
+
+  #mainBodyContent {
+    padding: unset;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0;
+    width: unset;
+  }
+
+  #navBarExternalLinksHolder {
+    display: none;
+  }
+
+  .projectTileList {
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: unset;
+  }
+
+  .projectTileGrid {
+    width: 45%;
+  }
+}

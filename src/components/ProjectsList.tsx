@@ -23,31 +23,23 @@ export default function ProjectsList(): JSX.Element {
       photoName: "rhythmrunner",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
-      techs: ["React","TypeScript","Vite","Web Audio API"]
+      techs: ["Web Audio API", "React","TypeScript"]
     },
     {
       title: "Pierre's Treats",
-      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
+      desc: "Bakery storefront, built using the .NET MVC framework, backed by MySQL, and utilizing the .NET Core Identity suite for user authentication.",
       photoName: "pierrestreats",
       repoName: "PierresTreats",
       liveLink: "https://pierrestreats.onrender.com/",
       techs: ["C#",".NET Framework", "EFCore", "MySQL"]
     },
     {
-      title: "Rhythm Runner",
-      desc: "Music-based platformer game in TypeScript!",
-      photoName: "3",
-      repoName: "rhythmrunner",
-      liveLink: "https://mejia.dev/rhythm-runner",
-      techs: ["React","TypeScript","Vite","Web Audio API"]
-    },
-    {
-      title: "Pierre's Treats",
-      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
-      photoName: "4",
-      repoName: "PierresTreats",
-      liveLink: "",
-      techs: ["C#","MySQL", ".NET", "EFCore"]
+      title: "mejia.dev",
+      desc: "This website! Built using Vite + React + TypeScript with a strong focus on accessibility and responsive design.",
+      photoName: "mejiadev",
+      repoName: "mejia.dev",
+      liveLink: "https://mejia.dev/",
+      techs: ["React","TypeScript","Vite"]
     },
     {
       title: "Pierre's Nightmare",
@@ -58,20 +50,12 @@ export default function ProjectsList(): JSX.Element {
       techs: ["C#","Unity","Visual Studio"]
     },
     {
-      title: "Pierre's Treats",
-      desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
-      photoName: "6",
-      repoName: "PierresTreats",
-      liveLink: "",
-      techs: ["C#","MySQL", ".NET", "EFCore"]
-    },
-    {
       title: "Another Project",
-      desc: "Some random app that probably doesn't work",
+      desc: "",
       photoName: "7",
-      repoName: "test",
-      liveLink: "https://test.com",
-      techs: ["Python","Django","Tailwind"]
+      repoName: "ice_cream_shop",
+      liveLink: "https://mejiadev.pythonanywhere.com/shop/",
+      techs: ["Python","Django","TailwindCSS","MySQL"]
     },
   ];
 

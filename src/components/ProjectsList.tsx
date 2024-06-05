@@ -50,9 +50,9 @@ export default function ProjectsList(): JSX.Element {
       techs: ["C#","Unity","Visual Studio"]
     },
     {
-      title: "Another Project",
-      desc: "",
-      photoName: "7",
+      title: "Ice Cream Shop",
+      desc: "Built using the Django framework for Python, this site features an interface accessible via the '/shop' route, where unauthentciated users can view all the available types of ice cream. Meanwhile, site admins can use the '/admin' route to access the Django Admin portal, allowing for easy updating of inventory.",
+      photoName: "ice_cream_shop",
       repoName: "ice_cream_shop",
       liveLink: "https://mejiadev.pythonanywhere.com/shop/",
       techs: ["Python","Django","TailwindCSS","MySQL"]

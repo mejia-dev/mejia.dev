@@ -28,10 +28,10 @@ export default function ProjectsList(): JSX.Element {
     {
       title: "Pierre's Treats",
       desc: "ASP.NET 6 project backed by MySQL server utilizing ASP.NET Core Identity for authentication",
-      photoName: "2",
+      photoName: "pierrestreats",
       repoName: "PierresTreats",
-      liveLink: "",
-      techs: ["C#","MySQL", ".NET", "EFCore"]
+      liveLink: "https://pierrestreats.onrender.com/",
+      techs: ["C#",".NET Framework", "EFCore", "MySQL"]
     },
     {
       title: "Rhythm Runner",

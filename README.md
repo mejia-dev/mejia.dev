@@ -37,5 +37,6 @@
   ```
 
 ## ⚖️ License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2024 Aaron Mejia.
-A copy of the license can be found [here](./LICENSE.txt).
+Copyright (C) 2024 Aaron Mejia
+
+This website is licensed under the GNU General Public License v3.0. See the COPYING file for more information.

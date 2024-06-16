@@ -51,7 +51,7 @@ export default function ProjectsList(): JSX.Element {
     },
     {
       title: "WA Notification Sound Changer",
-      desc: "The WhatsApp Web notification sound started to blend in with other notification sounds I was receiving throughout the day, so I set out to change that. WA Notification Sound Changer is a Chrome extension that lets you upload a file to use as the default notification sound. As my first Chrome extension, I'm quite proud of it.",
+      desc: "The notification sound for WhatsApp messages started to blend in with other notification sounds I was receiving throughout the day, so I set out to change that. WA Notification Sound Changer is a Chrome extension that lets you upload a file to use as the default notification sound.",
       photoName: "WhatsApp-Notification-Sound-Changer",
       repoName: "WhatsApp-Notification-Sound-Changer",
       liveLink: "https://chromewebstore.google.com/detail/lofnpggmmbpmapdagkdnfedmhgackcll",

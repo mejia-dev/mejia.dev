@@ -50,12 +50,12 @@ export default function ProjectsList(): JSX.Element {
       techs: ["C#","Unity","Visual Studio"]
     },
     {
-      title: "Ice Cream Shop",
-      desc: "Built using the Django framework for Python, this site features an interface accessible via the '/shop' route, where unauthentciated users can view all the available types of ice cream. Meanwhile, site admins can use the '/admin' route to access the Django Admin portal, allowing for easy updating of inventory.",
-      photoName: "ice_cream_shop",
-      repoName: "ice_cream_shop",
-      liveLink: "https://mejiadev.pythonanywhere.com/shop/",
-      techs: ["Python","Django","TailwindCSS","MySQL"]
+      title: "WA Notification Sound Changer",
+      desc: "The WhatsApp Web notification sound started to blend in with other notification sounds I was receiving throughout the day, so I set out to change that. WA Notification Sound Changer is a Chrome extension that lets you upload a file to use as the default notification sound. As my first Chrome extension, I'm quite proud of it.",
+      photoName: "WhatsApp-Notification-Sound-Changer",
+      repoName: "WhatsApp-Notification-Sound-Changer",
+      liveLink: "https://chromewebstore.google.com/detail/lofnpggmmbpmapdagkdnfedmhgackcll",
+      techs: ["JavaScript","Chrome APIs","Event Handling"]
     },
   ];
 

@@ -42,20 +42,20 @@ export default function ProjectsList(): JSX.Element {
       techs: ["React","TypeScript","Vite"]
     },
     {
-      title: "Pierre's Nightmare",
-      desc: 'Built in four days by a team of four devs, this Unity-powered "horror" survival game allows you to experience the nightmare of a baker named Pierre. How long can you last on an island while being attacked by delicious pastries?',
-      photoName: "pierresnightmare",
-      repoName: "PierresNightmare",
-      liveLink: "https://mejia.dev/pierres-horror/",
-      techs: ["C#","Unity","Visual Studio"]
-    },
-    {
       title: "WA Notification Sound Changer",
       desc: "The notification sound for WhatsApp messages started to blend in with other notification sounds I was receiving throughout the day, so I set out to change that. WA Notification Sound Changer is a Chrome extension that lets you upload a file to use as the default notification sound.",
       photoName: "WhatsApp-Notification-Sound-Changer",
       repoName: "WhatsApp-Notification-Sound-Changer",
       liveLink: "https://chromewebstore.google.com/detail/lofnpggmmbpmapdagkdnfedmhgackcll",
       techs: ["JavaScript","Chrome APIs","Event Handling"]
+    },
+    {
+      title: "Pierre's Nightmare",
+      desc: 'Built in four days by a team of four devs, this Unity-powered "horror" survival game allows you to experience the nightmare of a baker named Pierre. How long can you last on an island while being attacked by delicious pastries?',
+      photoName: "pierresnightmare",
+      repoName: "PierresNightmare",
+      liveLink: "https://mejia.dev/pierres-horror/",
+      techs: ["C#","Unity","Visual Studio"]
     },
   ];
 

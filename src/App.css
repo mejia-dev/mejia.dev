@@ -283,39 +283,59 @@ input[type=radio] {
 
 @media screen and (max-width: 1024px) {
   #bodyRenderer {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     height: 100vh;
     border-style: unset;
     box-sizing: unset;
   }
 
   #headerContent {
-    display: inline;
+    display:block;
+    width: unset;
+    padding-top: unset;
+    height: unset;
+    padding-bottom: unset;
+    position: unset;
   }
 
   #navBar {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-evenly;
-    padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    height: 100%;
+    padding: 1%;
+    box-sizing: border-box;
   }
 
   #navBarHamburger {
     display: unset;
-    margin: 3vw;
+    margin: unset;
     width: 10vw;
   }
 
   #navBarPhotoNameWordArt {
-    width: 50vw;
+    height: auto;
+    width: auto;
+    max-width: 65%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
   }
 
   #navBarPhotoProfilePic {
-    margin: 3vw;
+    border-radius: 50%;
     width: 10vw;
+    height: 10vw;
+    padding: 1%;
+    box-sizing: border-box;
+    margin: unset;
+    align-self: center;
   }
 
   #navBarButtonHolder {
@@ -330,8 +350,9 @@ input[type=radio] {
     padding: unset;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 0;
     width: unset;
+    height: unset;
+    overflow-y:auto;
   }
 
   #navBarExternalLinksHolder {

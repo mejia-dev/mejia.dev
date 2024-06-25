@@ -14,7 +14,7 @@ interface ProjectData {
 export default function ProjectsList(): JSX.Element {
 
   const [viewerType, setViewerType] = useState<string>("Grid");
-  const isSmallScreen: boolean = useMediaQuery({query:"(max-width: 1000px)"});
+  const isSmallScreen: boolean = useMediaQuery({ query: "(max-width: 1000px)" });
 
   const currentProjectsList: ProjectData[] = [
     {
@@ -23,7 +23,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "rhythmrunner",
       repoName: "rhythmrunner",
       liveLink: "https://mejia.dev/rhythm-runner",
-      techs: ["Web Audio API", "React","TypeScript"]
+      techs: ["Web Audio API", "React", "TypeScript"]
     },
     {
       title: "Pierre's Treats",
@@ -31,7 +31,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "pierrestreats",
       repoName: "PierresTreats",
       liveLink: "https://pierrestreats.onrender.com/",
-      techs: ["C#",".NET Framework", "EFCore", "MySQL"]
+      techs: ["C#", ".NET Framework", "EFCore", "MySQL"]
     },
     {
       title: "mejia.dev",
@@ -39,7 +39,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "mejiadev",
       repoName: "mejia.dev",
       liveLink: "https://mejia.dev/",
-      techs: ["React","TypeScript","Vite"]
+      techs: ["React", "TypeScript", "Vite"]
     },
     {
       title: "WA Notification Sound Changer",
@@ -47,7 +47,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "WhatsApp-Notification-Sound-Changer",
       repoName: "WhatsApp-Notification-Sound-Changer",
       liveLink: "https://chromewebstore.google.com/detail/lofnpggmmbpmapdagkdnfedmhgackcll",
-      techs: ["JavaScript","Chrome APIs","Event Handling"]
+      techs: ["JavaScript", "Chrome APIs", "Event Handling"]
     },
     {
       title: "Pierre's Nightmare",
@@ -55,7 +55,7 @@ export default function ProjectsList(): JSX.Element {
       photoName: "pierresnightmare",
       repoName: "PierresNightmare",
       liveLink: "https://mejia.dev/pierres-horror/",
-      techs: ["C#","Unity","Visual Studio"]
+      techs: ["C#", "Unity", "Visual Studio"]
     },
   ];
 
@@ -64,7 +64,7 @@ export default function ProjectsList(): JSX.Element {
   }, [isSmallScreen]);
 
   return (
-    <>
+    <div>
       <h2>Projects</h2>
       <div id="projectsListControlsDiv">
         <form id="projectsListControlsForm">
@@ -98,9 +98,7 @@ export default function ProjectsList(): JSX.Element {
             techs={project.techs}
           />
         ))}
-
-
       </div>
-    </>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 export default function About(): JSX.Element {
   return (
-    <>
+    <div>
       <h2>Hey, I'm Aaron!</h2>
       <h4>Full-Stack Dev, Technical Writer, IT Trainer</h4>
       <div id="aboutText">
@@ -14,6 +14,6 @@ export default function About(): JSX.Element {
           In my downtime, you can find me recording music, modding games, and experimenting with new technologies.
         </p>
       </div>
-    </>
+    </div>
   )
 }

@@ -46,7 +46,7 @@ export default function Contact(): JSX.Element {
 
 
   return (
-    <>
+    <div>
       <h2>Contact</h2>
       <span>Whether you have an idea for a project or just want to chat, feel free to send me a message!</span>
       <form id="contactForm" onSubmit={(event) => submitForm(event)}>
@@ -63,7 +63,7 @@ export default function Contact(): JSX.Element {
         <br />
         {statusMessage}
       </form>
-      
-    </>
+
+    </div>
   )
 }

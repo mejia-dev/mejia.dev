@@ -156,6 +156,12 @@ input[type=radio] {
   flex-direction: column;
 }
 
+.projectTileDetails {
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .projectTileDetailsTechsList {
   display: flex;
   flex-direction: row;
@@ -180,6 +186,7 @@ input[type=radio] {
 }
 
 .projectTileList {
+  /* text-align: center; */
   width: 100%;
   display: flex;
   padding: 1%;

@@ -288,6 +288,19 @@ input[type=radio] {
   margin: 5%;
 }
 
+#mainBodyContent>div {
+  animation: fadeInAnimation ease .5s;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   #bodyRenderer {
     display: flex;

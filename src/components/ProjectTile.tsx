@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactModal, { Styles } from "react-modal";
 import noImage from "../assets/noImg.png";
+import loadingImage from "../assets/projectLoadImg.webp";
 import { useMediaQuery } from "react-responsive";
 
 interface ProjectTileProps {
@@ -18,7 +19,7 @@ interface ImageObject {
 }
 
 export default function ProjectTile(props: ProjectTileProps): JSX.Element {
-  const [imgSrc, setImgSrc] = useState<string>("");
+  const [imgSrc, setImgSrc] = useState<string>(loadingImage);
   const [modalShown, setModalShown] = useState<boolean>(false);
   const isSmallScreen: boolean = useMediaQuery({ query: "(max-width: 1000px)" });
 

@@ -86,6 +86,19 @@ export default function Header(props: HeaderProps): JSX.Element {
     )
   }
 
+  function renderCopyrightInfo(): JSX.Element {
+    return (
+      <div id="navBarCopyrightHolder">
+        <span id="navBarCopyrightHolderIcon">
+          ©
+        </span>
+        <span id="navBarCopyrightContent">
+          2024 Aaron Mejia | Photos: <a href="https://dellinzhang.com/" target="_blank">Dellin Zhang</a>
+        </span>
+      </div>
+    )
+  }
+
   useEffect(() => {
     ReactModal.setAppElement(document.getElementById("mainBodyContent") as HTMLElement)
   }, [])
@@ -108,6 +121,7 @@ export default function Header(props: HeaderProps): JSX.Element {
             {renderNavButtons()}
             <hr /><br />
             {renderExternalLinks()}
+            {renderCopyrightInfo()}
           </div>
 
         </ReactModal>
@@ -118,8 +132,8 @@ export default function Header(props: HeaderProps): JSX.Element {
       </div>
       <div id="navBarExternalLinksHolder">
         {renderExternalLinks()}
+        {renderCopyrightInfo()}
       </div>
-
     </>
   )
 }

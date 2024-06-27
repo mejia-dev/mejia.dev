@@ -186,7 +186,6 @@ input[type=radio] {
 }
 
 .projectTileList {
-  /* text-align: center; */
   width: 100%;
   display: flex;
   padding: 1%;
@@ -290,6 +289,47 @@ input[type=radio] {
 
 #mainBodyContent>div {
   animation: fadeInAnimation ease .5s;
+}
+
+#navBarCopyrightContent {
+  font-size:smaller;
+  display: none;
+  background-color: rgba(36, 36, 36, .75);
+  border-radius: 10px;
+}
+
+#navBarExternalLinksHolder {
+  text-align: center;
+}
+
+#navBarCopyrightHolder {
+  bottom: 0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#navBarCopyrightHolderIcon:hover {
+  animation: fadeInAnimation ease .5s;
+}
+
+#navBarCopyrightHolderIcon:hover + #navBarCopyrightContent {
+  display: unset;
+  animation: fadeInAnimation ease .5s;
+}
+
+#navBarCopyrightContent:hover {
+  display: unset;
+  padding: .4rem;
+  animation: fadeInAnimation ease .5s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @keyframes fadeInAnimation {

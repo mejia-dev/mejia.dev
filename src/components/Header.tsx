@@ -109,8 +109,8 @@ export default function Header(props: HeaderProps): JSX.Element {
         <svg onClick={() => setModalShown(!modalShown)} xmlns="http://www.w3.org/2000/svg" fill="currentColor" id="navBarHamburger" viewBox="0 0 16 16">
           <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
         </svg>
-        <img id="navBarPhotoNameWordArt" src={imgWordArt} alt="Aaron Mejia name" />
-        <img id="navBarPhotoProfilePic" src={imgProfilePic} alt="Silhouette of Aaron sitting on beach watching sunset" />
+        <img id="navBarPhotoNameWordArt" src={imgWordArt} alt="Aaron Mejia name" onClick={() => props.onClickNavButton("Home")} />
+        <img id="navBarPhotoProfilePic" src={imgProfilePic} alt="Silhouette of Aaron sitting on beach watching sunset" onClick={() => props.onClickNavButton("Home")} />
         <ReactModal
           contentLabel="Navigation Buttons"
           isOpen={modalShown}

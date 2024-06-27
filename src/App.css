@@ -53,6 +53,7 @@ body {
   height: auto;
   display: block;
   margin: auto;
+  cursor: pointer;
 }
 
 #navBarPhotoProfilePic {
@@ -61,6 +62,7 @@ body {
   height: auto;
   display: block;
   margin: auto;
+  cursor: pointer;
 }
 
 #floatingNavBarPlaceholder {

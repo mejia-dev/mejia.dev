@@ -73,7 +73,7 @@ export default function ProjectTile(props: ProjectTileProps): JSX.Element {
   useEffect(() => {
     async function getImgSrc(): Promise<void> {
       try {
-        const image: ImageObject = await import(`../assets/projects/${props.photoName}.png`);
+        const image: ImageObject = await import(`../assets/projects/${props.photoName}.webp`);
         setImgSrc(image.default);
       }
       catch (error) {

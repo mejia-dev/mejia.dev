@@ -283,9 +283,27 @@ input[type=radio] {
   margin: 1%;
 }
 
+#aboutContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutOption {
+  text-decoration: underline 0.15em rgba(255, 255, 255, 0);
+  transition: text-decoration-color 200ms ease-in;
+}
+
+.aboutOption:hover,
+.aboutOptionSelected { 
+  color: #CDA985;
+  text-decoration: underline 0.15em rgba(205, 169, 133, 100);
+}
+
 #aboutText {
   font-size: larger;
-  text-align: left;
+  text-align: center;
   margin: 5%;
 }
 

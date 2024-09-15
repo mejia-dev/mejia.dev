@@ -31,7 +31,7 @@ export default function About(): JSX.Element {
   return (
     <div id="aboutContent">
       <h1>Hey, I'm Aaron!</h1>
-      <h3>
+      <h3 id="aboutButtons">
         {menuOptions.map((item, index) => (
           <span key={"aboutList" + index}>
             <a

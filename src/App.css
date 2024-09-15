@@ -426,8 +426,12 @@ input[type=radio] {
     padding-left: 1rem;
     padding-right: 1rem;
     width: unset;
-    height: unset;
     overflow-y:auto;
+    height: 100%;
+  }
+
+  #aboutButtons {
+    font-size: 4vw;
   }
 
   #navBarExternalLinksHolder {

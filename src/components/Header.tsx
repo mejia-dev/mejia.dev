@@ -87,13 +87,14 @@ export default function Header(props: HeaderProps): JSX.Element {
   }
 
   function renderCopyrightInfo(): JSX.Element {
+    const currentYear: number = new Date().getFullYear();
     return (
       <div id="navBarCopyrightHolder">
         <span id="navBarCopyrightHolderIcon">
           ©
         </span>
         <span id="navBarCopyrightContent">
-        ©2024 Aaron Mejia | Photos: <a href="https://dellinzhang.com/" target="_blank">Dellin Zhang</a>
+        ©2024 - {currentYear} Aaron Mejia {modalShown? <br /> : "|"} Photos: <a href="https://dellinzhang.com/" target="_blank">Dellin Zhang</a>
         </span>
       </div>
     )

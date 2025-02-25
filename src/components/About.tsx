@@ -7,9 +7,9 @@ export default function About(): JSX.Element {
     switch (aboutOption) {
       case "Writer": return "I provide technical writing services for items such as IT procedures, software manuals, and programming curriculum. I bridge the gap between complex technical information and readability, helping both technical experts and end users understand the material.";
 
-      case "Trainer": return "Prior to working as a developer, I worked in the IT industry for 5 years, creating training plans and material, organizing training sessions for tier 1 and tier 2 technicians, and running an internship program for those interested in starting in the industry.";
+      case "Trainer": return "Prior to working as a developer, I worked in the IT industry for 5 years, creating training plans and material, organizing training sessions for technicians, and running an internship program for newcomers to the industry.";
 
-      default: return "I'm a full-stack developer specializing in C#/.NET, TypeScript, and Python. I currently work as an automation specialist at a cybersecurity firm, creating software and scripts to streamline efficiency, reduce human error, and proactively analyze cyber threats.";
+      default: return "I'm a full-stack developer specializing in C#/.NET, TypeScript, and Python. I'm currently the lead developer at an IT company, architecting software and writing scripts to increase efficiency, reduce human error, and proactively remediate potential cyber threats.";
     }
   }
 

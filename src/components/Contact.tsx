@@ -92,7 +92,7 @@ export default function Contact(): JSX.Element {
   return (
     <Section id="contact" title="Contact">
       <p className="contactIntro">
-        Got an idea, a question, or just want to chat? Email is the best way to reach me.
+        Got an idea, a question, or just want to chat? Shoot me an email and I'll get back to you shortly!
       </p>
 
       <div className="terminal" ref={terminalRef}>

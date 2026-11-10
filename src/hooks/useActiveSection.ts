@@ -14,11 +14,13 @@ export default function useActiveSection<T extends string>(ids: readonly T[], sc
 
       if (scrolling && scroller) {
         const rect = scroller.getBoundingClientRect();
-        atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 4;
+        const overflows = scroller.scrollHeight > scroller.clientHeight + 4;
+        atBottom = overflows && scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 4;
         top = rect.top;
         height = rect.height;
       } else {
-        atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+        const overflows = document.documentElement.scrollHeight > window.innerHeight + 4;
+        atBottom = overflows && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
         top = 0;
         height = window.innerHeight;
       }

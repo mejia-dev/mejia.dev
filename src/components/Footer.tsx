@@ -8,19 +8,23 @@ interface FooterProps {
 
 export default function Footer({ className = "" }: FooterProps): JSX.Element {
   const year: number = new Date().getFullYear();
-  const [copied, setCopied] = useState<boolean>(false);
+  const [status, setStatus] = useState<"copied" | "failed" | null>(null);
   const timer = useRef<number | undefined>(undefined);
 
   useEffect(() => () => window.clearTimeout(timer.current), []);
 
   const copyEmail = async (event: MouseEvent<HTMLAnchorElement>): Promise<void> => {
+    if (!navigator.clipboard?.writeText) return;
     event.preventDefault();
+    let result: "copied" | "failed" = "copied";
     try {
       await navigator.clipboard.writeText(email);
-    } catch { return; }
-    setCopied(true);
+    } catch {
+      result = "failed";
+    }
+    setStatus(result);
     window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => setCopied(false), 1500);
+    timer.current = window.setTimeout(() => setStatus(null), 1500);
   };
 
   return (
@@ -56,8 +60,8 @@ export default function Footer({ className = "" }: FooterProps): JSX.Element {
           >
             <MailIcon size={20} />
           </a>
-          <span className={`copyToast${copied ? " copyToastShown" : ""}`} role="status">
-            {copied ? "Email copied!" : ""}
+          <span className={`copyToast${status ? " copyToastShown" : ""}`} role="status">
+            {status === "copied" ? "Email copied!" : status === "failed" ? "Couldn't copy" : ""}
           </span>
         </span>
       </div>

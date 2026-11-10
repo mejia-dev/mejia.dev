@@ -16,6 +16,10 @@ export default function useScrollToSection(ids: readonly string[]): void {
     const id = location.pathname.replace(/^\/+|\/+$/g, "");
     const behavior: ScrollBehavior = isFirstRun.current ? "instant" : "auto";
     isFirstRun.current = false;
-    if (ids.includes(id)) document.getElementById(id)?.scrollIntoView({ behavior });
+    if (id !== "" && !ids.includes(id)) {
+      navigate("/", { replace: true });
+      return;
+    }
+    document.getElementById(id === "" ? ids[0] : id)?.scrollIntoView({ behavior });
   }, [ids, location.key, location.pathname, location.hash, navigate]);
 }

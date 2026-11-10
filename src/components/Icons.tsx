@@ -7,10 +7,10 @@ import Envelope from "bootstrap-icons/icons/envelope.svg?react";
 import Copy from "bootstrap-icons/icons/copy.svg?react";
 import Github from "bootstrap-icons/icons/github.svg?react";
 import List from "bootstrap-icons/icons/list.svg?react";
-import PersonRaisedHand from "bootstrap-icons/icons/person-raised-hand.svg?react";
 import ShieldCheck from "bootstrap-icons/icons/shield-check.svg?react";
 import X from "bootstrap-icons/icons/x-lg.svg?react";
 import BuyMeACoffee from "../assets/icons/buy-me-a-coffee.svg?react";
+import Compass from "../assets/icons/compass.svg?react";
 
 interface IconProps {
   size?: number;
@@ -29,8 +29,8 @@ export const CoffeeIcon = createIcon(BuyMeACoffee);
 export const CodeIcon = createIcon(CodeSlash);
 export const ShieldIcon = createIcon(ShieldCheck);
 export const BookIcon = createIcon(Book);
-export const HandIcon = createIcon(PersonRaisedHand);
 export const ArrowUpRightIcon = createIcon(ArrowUpRight);
+export const CompassIcon = createIcon(Compass);
 export const CopyIcon = createIcon(Copy);
 export const CheckIcon = createIcon(Check);
 export const MailIcon = createIcon(Envelope);

@@ -6,6 +6,7 @@ export const email: string = ["aaron", "mejia.dev"].join("@");
 
 export const sections = [
   { id: "hello", label: "Hello" },
+  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
@@ -15,7 +16,7 @@ export type SectionId = (typeof sections)[number]["id"];
 
 export const intro = {
   greeting: "Hey, I'm Aaron!",
-  tagline: "Security-focused full-stack developer",
+  tagline: "Security-Focused Full-Stack Developer",
   paragraphs: [
     "I build software that saves people time: integrations, automation platforms, internal tools, and the occasional browser extension when something bugs me enough.",
     "Before I wrote code full-time, I spent years in IT support, sysadmin roles, and training technicians and running an internship program. It gave me a front-row seat to how people actually use software, and I've seen enough good and bad software to know what works and what doesn't.",

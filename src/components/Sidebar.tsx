@@ -1,4 +1,5 @@
 import { useEffect, useState, type JSX } from "react";
+import { Link } from "react-router";
 import imgProfilePic from "../assets/aaron.png";
 import imgWordArt from "../assets/name.png";
 import { SectionId, sections } from "../data/content";
@@ -23,10 +24,10 @@ export default function Sidebar({ activeSection }: SidebarProps): JSX.Element {
 
   return (
     <header className={`sidebar ${menuOpen ? "menuOpen" : ""}`}>
-      <a href="#hello" className="brand" onClick={() => setMenuOpen(false)} aria-label="Aaron Mejia, back to top">
+      <Link to="/hello" className="brand" onClick={() => setMenuOpen(false)} aria-label="Aaron Mejia, back to top">
         <img className="brandPhoto" src={imgProfilePic} alt="" width={500} height={500} />
         <img className="brandWordmark" src={imgWordArt} alt="" width={874} height={206} />
-      </a>
+      </Link>
 
       <button
         type="button"
@@ -43,13 +44,13 @@ export default function Sidebar({ activeSection }: SidebarProps): JSX.Element {
         <ul>
           {sections.map((section) => (
             <li key={section.id}>
-              <a
-                href={`#${section.id}`}
+              <Link
+                to={`/${section.id}`}
                 aria-current={activeSection === section.id ? "true" : undefined}
                 onClick={() => setMenuOpen(false)}
               >
                 {section.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

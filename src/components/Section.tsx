@@ -1,5 +1,4 @@
-import { ReactNode, useRef, type JSX } from "react";
-import useInView from "../hooks/useInView";
+import { ReactNode, type JSX } from "react";
 
 interface SectionProps {
   id: string;
@@ -9,15 +8,11 @@ interface SectionProps {
 }
 
 export default function Section({ id, title, className = "", children }: SectionProps): JSX.Element {
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, 0.08);
-
   return (
     <section
       id={id}
-      ref={ref}
       aria-labelledby={title ? `${id}Title` : undefined}
-      className={`section reveal ${inView ? "isVisible" : ""} ${className}`}
+      className={`section ${className}`}
     >
       {title && (
         <div className="sectionHeading">

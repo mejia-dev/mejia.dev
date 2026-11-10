@@ -301,19 +301,6 @@
   margin: 0 0 0.75rem;
 }
 
-.wave {
-  display: inline-flex;
-  margin-left: 0.4rem;
-  vertical-align: -0.04em;
-  color: var(--peach);
-  transform-origin: 70% 75%;
-}
-
-.wave svg {
-  width: 0.75em;
-  height: 0.75em;
-}
-
 .tagline {
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   font-weight: 600;
@@ -519,7 +506,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease;
 }
 
 .projectCard:hover {
@@ -913,14 +900,6 @@
   .termCaretBlink {
     animation: blink 1.1s steps(1) infinite;
   }
-}
-
-@keyframes wave {
-  0%, 60%, 100% { transform: rotate(0deg); }
-  10%, 30% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
 }
 
 @keyframes blink {

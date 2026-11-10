@@ -36,7 +36,7 @@ export default function Sidebar({ activeSection }: SidebarProps): JSX.Element {
 
   return (
     <header ref={headerRef} className={`sidebar ${menuOpen ? "menuOpen" : ""}`}>
-      <Link to="/hello" className="brand" onClick={() => setMenuOpen(false)} aria-label="Aaron Mejia, back to top">
+      <Link to="/" className="brand" onClick={() => setMenuOpen(false)} aria-label="Aaron Mejia, back to top">
         <img className="brandPhoto" src={imgProfilePic} alt="" width={500} height={500} />
         <img className="brandWordmark" src={imgWordArt} alt="" width={874} height={206} />
       </Link>
@@ -58,7 +58,7 @@ export default function Sidebar({ activeSection }: SidebarProps): JSX.Element {
           {sections.map((section) => (
             <li key={section.id}>
               <Link
-                to={`/${section.id}`}
+                to={section.id === sections[0].id ? "/" : `/${section.id}`}
                 aria-current={activeSection === section.id ? "true" : undefined}
                 onClick={() => setMenuOpen(false)}
               >

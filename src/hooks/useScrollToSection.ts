@@ -9,14 +9,14 @@ export default function useScrollToSection(ids: readonly string[]): void {
   useEffect(() => {
     const legacyId = location.hash.slice(1);
     if (ids.includes(legacyId)) {
-      navigate(`/${legacyId}`, { replace: true });
+      navigate(legacyId === ids[0] ? "/" : `/${legacyId}`, { replace: true });
       return;
     }
 
     const id = location.pathname.replace(/^\/+|\/+$/g, "");
     const behavior: ScrollBehavior = isFirstRun.current ? "instant" : "auto";
     isFirstRun.current = false;
-    if (id !== "" && !ids.includes(id)) {
+    if (id === ids[0] || (id !== "" && !ids.includes(id))) {
       navigate("/", { replace: true });
       return;
     }

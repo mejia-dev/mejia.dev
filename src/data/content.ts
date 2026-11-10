@@ -18,8 +18,8 @@ export const intro = {
   greeting: "Hey, I'm Aaron!",
   tagline: "Security-Focused Full-Stack Developer",
   paragraphs: [
-    "I build software that saves people time: integrations, automation platforms, internal tools, and the occasional browser extension when something bugs me enough.",
-    "Before I wrote code full-time, I spent years in IT support, sysadmin roles, and training technicians and running an internship program. It gave me a front-row seat to how people actually use software, and I've seen enough good and bad software to know what works and what doesn't.",
+    "I build software that saves people time: integrations, automation platforms, internal tools, and the occasional browser extension when something bugs me enough. I'm detail-oriented, enjoy digging into difficult problems, and love designing systems that are easy to use and built to last.",
+    "Before I wrote code full-time, I spent years in IT support, sysadmin roles, training technicians, and running an internship program for people interested in the IT industry. It gave me a front-row seat to how people actually use software, what makes software reliable, and why the best fix is the one the next person never has to make.",
   ],
 };
 
@@ -35,7 +35,7 @@ export const hats: Hat[] = [
   {
     icon: "build",
     title: "Build",
-    text: "Full-stack apps in C#/.NET, TypeScript, and Python. Lately, SaaS integrations, automation platforms, and the CI/CD pipelines that ship them.",
+    text: "Full-stack apps in C#/.NET, TypeScript, and Python. Lately, SaaS integrations, automation platforms, and their CI/CD pipelines.",
   },
   {
     icon: "secure",

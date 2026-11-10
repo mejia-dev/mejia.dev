@@ -1,53 +1,69 @@
-import { useState } from "react";
+import type { JSX } from "react";
+import { certifications, education, Hat, HatIcon, hats, intro, skills } from "../data/content";
+import { BookIcon, CodeIcon, ShieldIcon } from "./Icons";
+import Section from "./Section";
+
+function renderHatIcon(icon: HatIcon): JSX.Element {
+  switch (icon) {
+    case "secure": return <ShieldIcon size={22} />;
+    case "teach": return <BookIcon size={22} />;
+    default: return <CodeIcon size={22} />;
+  }
+}
 
 export default function About(): JSX.Element {
-
-  const [aboutOption, setAboutOption] = useState<string>("Dev");
-  function getAboutOption(): string {
-    switch (aboutOption) {
-      case "Writer": return "I provide technical writing services for items such as IT procedures, software manuals, and programming curriculum. I bridge the gap between complex technical information and readability, helping both technical experts and end users understand the material.";
-
-      case "Trainer": return "Prior to working as a developer, I worked in the IT industry for 5 years, creating training plans and material, organizing training sessions for technicians, and running an internship program for newcomers to the industry.";
-
-      default: return "I'm a full-stack developer specializing in C#/.NET, TypeScript, and Python. I'm currently the lead developer at an IT company, architecting software and writing scripts to increase efficiency, reduce human error, and proactively remediate potential cyber threats.";
-    }
-  }
-
-  const menuOptions = [
-    {
-      value: "Dev",
-      text: "Full-Stack Dev",
-    },
-    {
-      value: "Writer",
-      text: "Technical Writer",
-    },
-    {
-      value: "Trainer",
-      text: "IT Trainer",
-    },
-  ]
-
   return (
-    <div id="aboutContent">
-      <h1>Hey, I'm Aaron!</h1>
-      <h3 id="aboutButtons">
-        {menuOptions.map((item, index) => (
-          <span key={"aboutList" + index}>
-            <a
-              href='#'
-              onClick={() => setAboutOption(item.value)}
-              className={aboutOption == item.value ? "aboutOptionSelected" : "aboutOption"}
-            >
-              {item.text}
-            </a>
-            {index < menuOptions.length - 1 ? <span> · </span> : <></>}
-          </span>
+    <Section id="about" title="About">
+      {intro.paragraphs.map((paragraph) => (
+        <p key={paragraph} className="introText">{paragraph}</p>
+      ))}
+
+      <ul className="hats">
+        {hats.map((hat: Hat) => (
+          <li key={hat.title} className="hat">
+            <span className="hatIcon">{renderHatIcon(hat.icon)}</span>
+            <h3>{hat.title}</h3>
+            <p>{hat.text}</p>
+          </li>
         ))}
-      </h3>
-      <div id="aboutText">
-        {getAboutOption()}
+      </ul>
+
+      <div className="credentials">
+        <div className="card">
+          <h3>Education</h3>
+          <ul className="plainList">
+            {education.map((item) => (
+              <li key={item.title}>
+                <span className="credTitle">{item.title}</span>
+                <span className="credMeta">{item.org} · {item.period}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card">
+          <h3>Certifications</h3>
+          <ul className="plainList">
+            {certifications.map((cert) => (
+              <li key={cert}>
+                <span className="credTitle">{cert}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  )
+
+      <div className="skills">
+        {skills.map((group) => (
+          <div key={group.group} className="skillGroup">
+            <h3>{group.group}</h3>
+            <ul className="chips">
+              {group.items.map((item) => (
+                <li key={item} className="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }

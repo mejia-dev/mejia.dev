@@ -1,69 +1,156 @@
-import { FormEvent, ReactElement, useState } from 'react';
+import { useEffect, useRef, useState, type JSX, type MouseEvent } from "react";
+import { email } from "../data/content";
+import useInView from "../hooks/useInView";
+import { MailIcon } from "./Icons";
+import Section from "./Section";
+
+interface TerminalLine {
+  kind: "cmd" | "out";
+  text: string;
+  tone?: "email" | "ok" | "err";
+  extra?: boolean;
+}
+
+interface Cursor {
+  line: number;
+  char: number;
+}
+
+const baseScript: TerminalLine[] = [
+  { kind: "cmd", text: "whoami" },
+  { kind: "out", text: "aaron, full-stack dev" },
+  { kind: "cmd", text: "cat email.txt" },
+  { kind: "out", text: email, tone: "email" },
+];
+
+const mailto = `mailto:${email}`;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 export default function Contact(): JSX.Element {
+  const terminalRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(terminalRef, 0.4);
 
-  const [formSubmitSuccess, setFormSubmitSuccess] = useState<boolean>(false);
-  const [formSubmitError, setFormSubmitError] = useState<null | string>(null);
-  const [formSubmitLoading, setFormSubmitLoading] = useState<boolean>(false);
+  const [script, setScript] = useState<TerminalLine[]>(baseScript);
+  const [cursor, setCursor] = useState<Cursor>({ line: reducedMotion ? baseScript.length : 0, char: 0 });
+  const [copied, setCopied] = useState<boolean>(false);
+  const [status, setStatus] = useState<string>("");
 
-  function submitForm(event: FormEvent): void {
-    event.preventDefault();
-    if (!formSubmitLoading) {
-      setFormSubmitLoading(true);
-      setFormSubmitSuccess(false);
-      setFormSubmitError(null);
-      const formElement: HTMLFormElement = document.getElementById("contactForm") as HTMLFormElement;
-      const submittedData: FormData = new FormData(formElement);
-      fetch("https://script.google.com/macros/s/AKfycbwyhH4_qQyeSSNXyX7qSX680iXYOpIu7vu-Ih5uyUqzwdNgYBZba_k-PHrlNlwA88XqYA/exec",
-        {
-          method: "POST",
-          body: submittedData
-        }
-      )
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`${response.status}`);
-          }
-          setFormSubmitSuccess(true);
-          formElement.reset();
-          setFormSubmitLoading(false);
-        })
-        .catch((error) => {
-          setFormSubmitError(error.message);
-          setFormSubmitLoading(false);
-        });
+  useEffect(() => {
+    if (cursor.line >= script.length) return;
+    if (reducedMotion) {
+      setCursor({ line: script.length, char: 0 });
+      return;
     }
+    if (!inView) return;
+
+    const current = script[cursor.line];
+    const typing = current.kind === "cmd" && cursor.char < current.text.length;
+    let delay = typing ? 45 + Math.random() * 60 : current.kind === "cmd" ? 380 : 240;
+    if (cursor.line === 0 && cursor.char === 0) delay = 600;
+
+    const timer = window.setTimeout(() => {
+      setCursor(typing ? { line: cursor.line, char: cursor.char + 1 } : { line: cursor.line + 1, char: 0 });
+    }, delay);
+    return () => window.clearTimeout(timer);
+  }, [cursor, script, inView]);
+
+  useEffect(() => {
+    if (!copied) return;
+    const timer = window.setTimeout(() => setCopied(false), 2000);
+    return () => window.clearTimeout(timer);
+  }, [copied]);
+
+  async function copyEmail(event: MouseEvent<HTMLAnchorElement>): Promise<void> {
+    event.preventDefault();
+    let ok = true;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      ok = false;
+    }
+    setCopied(ok);
+    setStatus(ok ? "Email address copied to clipboard." : `Couldn't copy automatically. The address is ${email}.`);
+    setScript((previous) => [
+      ...previous.filter((line) => !line.extra),
+      { kind: "cmd", text: "wl-copy < email.txt", extra: true },
+      ok
+        ? { kind: "out", text: "✓ Copied to clipboard. Talk to you soon!", tone: "ok", extra: true }
+        : { kind: "out", text: "✗ Clipboard unavailable, try selecting the address above", tone: "err", extra: true },
+    ]);
   }
 
-  let statusMessage: ReactElement = <span></span>;
-  if (formSubmitSuccess) {
-    statusMessage = <span>Message sent! I'll be in touch with you soon.</span>
-  } else if (formSubmitLoading) {
-    statusMessage = <span>Sending message...</span>
-  } else if (formSubmitError != null) {
-    statusMessage = <span>Error: {formSubmitError}</span>
-  }
+  const done = cursor.line >= script.length;
+  const typingLine = !done && script[cursor.line].kind === "cmd" ? script[cursor.line] : null;
 
+  function renderOutput(line: TerminalLine): JSX.Element {
+    if (line.tone === "email") {
+      return <a href={mailto} tabIndex={-1} className="termEmail">{line.text}</a>;
+    }
+    return <span className={line.tone ? `term-${line.tone}` : undefined}>{line.text}</span>;
+  }
 
   return (
-    <div>
-      <h2>Contact</h2>
-      <span>Whether you have an idea for a project or just want to chat, feel free to send me a message!</span>
-      <form id="contactForm" onSubmit={(event) => submitForm(event)}>
-        <div id="contactFormDetails">
-          <input placeholder="Name" name="Name" type="text" autoComplete="name" required />
-          <input placeholder="Email" name="Email" type="email" autoComplete="email" required />
-        </div>
-        <textarea name="Message" cols={30} rows={10} placeholder="Your message here..." required />
-        <button type="submit">
-          Send <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-send-fill" viewBox="0 0 16 16">
-            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
-          </svg>
-        </button>
-        <br />
-        {statusMessage}
-      </form>
+    <Section id="contact" title="Contact">
+      <p className="contactIntro">
+        Got an idea, a question, or just want to chat? Email is the best way to reach me.
+      </p>
 
-    </div>
-  )
+      <div className="terminal" ref={terminalRef}>
+        <div className="terminalBar" aria-hidden="true">
+          <span className="terminalDot" />
+          <span className="terminalDot" />
+          <span className="terminalDot" />
+          <span className="terminalTitle">Terminal: ~/contact</span>
+        </div>
+        <p className="srOnly">
+          Email me at <a href={mailto}>{email}</a>.
+        </p>
+        <div className="terminalBody" aria-hidden="true">
+          {script.slice(0, Math.min(cursor.line, script.length)).map((line, index) => (
+            <div key={index} className="termLine">
+              {line.kind === "cmd" ? (
+                <>
+                  <span className="termPrompt">$</span>
+                  <span>{line.text}</span>
+                </>
+              ) : (
+                renderOutput(line)
+              )}
+            </div>
+          ))}
+          {typingLine && (
+            <div className="termLine">
+              <span className="termPrompt">$</span>
+              <span>{typingLine.text.slice(0, cursor.char)}</span>
+              <span className="termCaret" />
+            </div>
+          )}
+          {done && (
+            <div className="termLine">
+              <span className="termPrompt">$</span>
+              <span className="termCaret termCaretBlink" />
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="contactActions">
+        <span className="footerLinkWrap">
+          <a
+            href={mailto}
+            onContextMenu={copyEmail}
+            className="button"
+            title="Email (right-click to copy address)"
+          >
+            <MailIcon size={18} />
+            {email}
+          </a>
+          <span className={`copyToast${copied ? " copyToastShown" : ""}`} aria-hidden="true">
+            {copied ? "Email copied!" : ""}
+          </span>
+        </span>
+      </div>
+      <p className="srOnly" role="status" aria-live="polite">{status}</p>
+    </Section>
+  );
 }

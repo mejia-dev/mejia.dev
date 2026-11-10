@@ -196,7 +196,7 @@ export const otherProjects: SmallProject[] = [
     ],
   },
   {
-    title: "GIF → ASCII",
+    title: "GIF to ASCII Converter",
     desc: "A small Python desktop app that turns GIF keyframes into ASCII art you can play back in a terminal.",
     links: [{ label: "GitHub", href: "https://github.com/mejia-dev/ExtractGIFFramesToText" }],
   },
